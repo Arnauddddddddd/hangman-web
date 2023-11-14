@@ -1,3 +1,3 @@
-module main.go
+module HangmanWeb
 
 go 1.18
