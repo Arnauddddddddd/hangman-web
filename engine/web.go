@@ -11,7 +11,7 @@ type DrawWeb struct {
 	Motsecret string
 	Motcachee string
 	Condition bool
-	Testultime int
+	Try int
 }
 
 
@@ -60,13 +60,16 @@ func(g *Structure) page2(w http.ResponseWriter, r *http.Request) {
 
 	
 	if len(g.currentLetter) > 0 {
-		g.verif(rune(g.currentLetter[0]))
+		if g.verif(rune(g.currentLetter[0])) {
+			g.letterTest = append(g.letterTest, string(g.currentLetter[0]))
+			g.inWord(rune(g.currentLetter[0]))
+		}
 	}
 	nombres := DrawWeb {
 		Motsecret: g.mot_secret,
 		Motcachee: g.mot_cachee,
 		Condition: false,
-		Testultime: len(g.letterTest),
+		Try: g.try,
 	}
 	fmt.Println(g.currentLetter, g.letterTest)
 	tmpl.Execute(w, nombres)
