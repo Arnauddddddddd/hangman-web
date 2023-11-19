@@ -11,12 +11,49 @@
       
 
       <h1>   <title> HANGMAN </title>   </h1>
-      <h2>   Veuillez saisir un nombre  </h2>
+      <h2>  Veuillez choisir une lettre  </h2>
 
-      <input type = "button" name = "test" VALUE = "atchatchatcha" onclick="window.location.href = 'page2.html'">
+      <!-- <input type = "button" name = "test" VALUE = "atchatchatcha" onclick="window.location.href = 'page2.html'"> -->
 
-      <h3>  {{ .Parite }}  </h3>
-      <h3>  {{ .nombre }}  </h3>
+      <h3>  {{ .Motsecret }}  </h3>
+      <h3>  {{ .Motcachee }}  </h3>
+      <h3>  {{ .Testultime }}  </h3>
+
+      {{if .Condition}}
+         <h2>  Veuillez choisir une lettre  </h2>
+      {{else}}
+         <h2>  sssssssssssssisir une lettre  </h2>
+      {{end}}
+
+     <form action="/page2">
+      <button type="submit" class="button choice" name="A" value="A"> A</button>
+      <button type="submit" class="button choice" name="B" value="B"> B</button>
+      <button type="submit" class="button choice" name="C" value="C"> C</button>
+      <button type="submit" class="button choice" name="D" value="D"> D</button>
+      <button type="submit" class="button choice" name="E" value="E"> E</button>
+      <button type="submit" class="button choice" name="F" value="F"> F</button>
+      <button type="submit" class="button choice" name="G" value="G"> G</button>
+      <button type="submit" class="button choice" name="H" value="H"> H</button>
+      <button type="submit" class="button choice" name="I" value="I"> I</button>
+      <button type="submit" class="button choice" name="J" value="J"> J</button>
+      <button type="submit" class="button choice" name="K" value="K"> K</button>
+      <button type="submit" class="button choice" name="L" value="L"> L</button>
+      <button type="submit" class="button choice" name="M" value="M"> M</button>
+      <button type="submit" class="button choice" name="N" value="N"> N</button>
+      <button type="submit" class="button choice" name="O" value="O"> O</button>
+      <button type="submit" class="button choice" name="P" value="P"> P</button>
+      <button type="submit" class="button choice" name="Q" value="Q"> Q</button>
+      <button type="submit" class="button choice" name="R" value="R"> R</button>
+      <button type="submit" class="button choice" name="S" value="S"> S</button>
+      <button type="submit" class="button choice" name="T" value="T"> T</button>
+      <button type="submit" class="button choice" name="U" value="U"> U</button>
+      <button type="submit" class="button choice" name="V" value="V"> V</button>
+      <button type="submit" class="button choice" name="W" value="W"> W</button>
+      <button type="submit" class="button choice" name="X" value="X"> X</button>
+      <button type="submit" class="button choice" name="Y" value="Y"> Y</button>
+      <button type="submit" class="button choice" name="Z" value="Z"> Z</button>
+   
+   </form>
       
    </body>
 </html>
