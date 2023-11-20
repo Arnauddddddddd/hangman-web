@@ -1,8 +1,6 @@
 
 body {
-    color: rgb(255, 0, 0);
-}
-
-h1 {
-    color: rgb(0, 0, 255);
+    color: rgb(202, 184, 184);
+    text-align: center;
+    align-content: center;
 }
