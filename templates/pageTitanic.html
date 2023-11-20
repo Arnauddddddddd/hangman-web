@@ -19,13 +19,27 @@
       <h3>  {{ .Motcachee }}  </h3>
       <h3>  {{ .Try }}  </h3>
 
-      {{if .Condition}}
-         <h2>  Veuillez choisir une lettre  </h2>
+      {{if .Win}}
+         <h2>  Vous venez de gagner !!!  </h2>
+         <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
       {{else}}
-         <h2>  sssssssssssssisir une lettre  </h2>
+         <h3>    </h3>
       {{end}}
 
-     <form action="/page2">
+
+      {{if .Loose}}
+         <h2>  Vous venez de perdre !!!  </h2>
+         <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
+      {{else}}
+         <h3>    </h3>
+      {{end}}
+
+
+
+      {{if .End}}
+      <h2>   </h2>
+      {{else}}
+     <form action="/pageTitanic">
       <button type="submit" class="button choice" name="A" value="A"> A</button>
       <button type="submit" class="button choice" name="B" value="B"> B</button>
       <button type="submit" class="button choice" name="C" value="C"> C</button>
@@ -54,6 +68,7 @@
       <button type="submit" class="button choice" name="Z" value="Z"> Z</button>
    
    </form>
+   {{end}}
       
    </body>
 </html>

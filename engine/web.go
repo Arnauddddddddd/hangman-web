@@ -10,14 +10,17 @@ import (
 type DrawWeb struct {
 	Motsecret string
 	Motcachee string
-	Condition bool
+	Win bool
+	Loose bool
 	Try int
+	End bool
 }
 
 
 func(g *Structure) web() {
 	http.HandleFunc("/", g.index)
-	http.HandleFunc("/page2", g.page2)
+	http.HandleFunc("/pageTitanic", g.pageTitanic)
+	http.HandleFunc("/pageAlien", g.pageAlien)
 	http.ListenAndServe(":8080", nil)
 	
 }
@@ -27,9 +30,21 @@ func(g *Structure) index(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, nil)
 }
 
-func(g *Structure) page2(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles(g.list_web_page[1]))
+func(g *Structure) pageTitanic(w http.ResponseWriter, r *http.Request) {
+	g.defWord("titanic")
 	r.ParseForm()
+	g.pageHangman(w, r, 1)
+}
+
+func(g *Structure) pageAlien(w http.ResponseWriter, r *http.Request) {
+	g.defWord("alien")
+	r.ParseForm()
+	g.pageHangman(w, r, 2)
+}
+
+
+func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice int) {
+	tmpl := template.Must(template.ParseFiles(g.list_web_page[indice]))
 	A := r.Form.Get("A")
 	B := r.Form.Get("B")
 	C := r.Form.Get("C")
@@ -57,20 +72,26 @@ func(g *Structure) page2(w http.ResponseWriter, r *http.Request) {
 	Y := r.Form.Get("Y")
 	Z := r.Form.Get("Z")
 	g.currentLetter = A+B+C+D+E+F+G+H+I+J+K+L+M+N+O+P+Q+R+S+T+U+V+W+X+Y+Z
-
-	
 	if len(g.currentLetter) > 0 {
 		if g.verif(rune(g.currentLetter[0])) {
 			g.letterTest = append(g.letterTest, string(g.currentLetter[0]))
 			g.inWord(rune(g.currentLetter[0]))
 		}
 	}
+	g.verifWin()
+	if g.try >= 10 {
+		g.loose = true
+		g.end = true
+	}
+
 	nombres := DrawWeb {
 		Motsecret: g.mot_secret,
 		Motcachee: g.mot_cachee,
-		Condition: false,
+		Win: g.win,
+		Loose: g.loose,
 		Try: g.try,
+		End: g.end,
 	}
-	fmt.Println(g.currentLetter, g.letterTest)
+	fmt.Println(g.currentLetter, g.letterTest, g.reset)
 	tmpl.Execute(w, nombres)
 }

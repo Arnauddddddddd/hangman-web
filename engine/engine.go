@@ -8,6 +8,10 @@ type Structure struct {
 	mot_cachee string
 	currentLetter string
 	letterTest []string
+	reset bool
+	win bool
+	loose bool
+	end bool
 	try int
 }
 
