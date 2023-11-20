@@ -4,7 +4,7 @@ import "fmt"
 
 func (g *Structure) init() {
 
-	g.list_web_page = []string{"templates/index.html", "templates/pageTitanic.html", "templates/pageAlien.html"}
+	g.list_web_page = []string{"pages/index.html", "pages/pageTitanic.html", "pages/pageAlien.html"}
 	g.indice_web = 1
 	g.running = true
 	g.mot_secret = ""
@@ -18,4 +18,3 @@ func (g *Structure) init() {
 	g.end = false
 	fmt.Println(g.mot_cachee)
 }
-

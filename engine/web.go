@@ -19,6 +19,8 @@ type DrawWeb struct {
 
 func(g *Structure) web() {
 	http.HandleFunc("/", g.index)
+	http.Handle("/steady/", http.StripPrefix("/steady/", http.FileServer(http.Dir("steady"))))
+	http.Handle("/pictures/", http.StripPrefix("/pictures/", http.FileServer(http.Dir("pictures"))))
 	http.HandleFunc("/pageTitanic", g.pageTitanic)
 	http.HandleFunc("/pageAlien", g.pageAlien)
 	http.ListenAndServe(":8080", nil)
