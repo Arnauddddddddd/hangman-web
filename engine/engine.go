@@ -8,6 +8,9 @@ type Structure struct {
 	mot_cachee string
 	currentLetter string
 	letterTest []string
+	listWordsTitanic []string
+	mot_titanic string
+	mot_alien string
 	reset bool
 	reset_button string
 	win bool
