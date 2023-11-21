@@ -1,10 +1,8 @@
 package engine
 
 import (
-	"bufio"
 	"fmt"
 	"math/rand"
-	"os"
 	"time"
 )
 
@@ -22,22 +20,11 @@ func (g *Structure) init() {
 	g.win = false
 	g.end = false
 	g.reset_button = ""
-	g.listWordsTitanic = []string{}
-
-	readFile, err := os.Open("/titanic.txt")
-	if err != nil {
-		fmt.Println(err)
-}
-	fileScanner := bufio.NewScanner(readFile)
-	fileScanner.Split(bufio.ScanLines)
-	for fileScanner.Scan() {
-		g.listWordsTitanic = append(g.listWordsTitanic, fileScanner.Text())
-	}
-	readFile.Close()
-	fmt.Println(g.listWordsTitanic)
-
-	rand.Seed(time.Now().UnixNano())
-	random := rand.Intn(len(g.listWordsTitanic))
-	g.mot_titanic = g.listWordsTitanic[random]
-	g.mot_alien = ""
+	g.listWordsTitanic = []string{"PAQUEBOT", "ICEBERG", "NAVIE", "AMOUR", "NAUFRAGE", "RICHE", "PAUVRE", "SAUVETAGE", "GLACE", "OCEAN", "COULER", "DIAMANT", "PASSAGER", "COQUE", "EPAVE", "CROISIERE", "CABINE", "DETRESSE", "LUXUEUX", "CANOT"}
+	g.listWordsAlien = []string{"MORT", "CREATURE", "VAISSEAU", "SURVIVANT", "MEURTRIER", "ORGANISME", "LANCE_FLAMME", "ANDROIDE", "ESPACE", "REINE", "OEUF", "PROIE", "HOTE", "TUER", "MONSTRE", "PLANETE", "EXPLOSION", "DESTRUCTION", "SURVIE", "CONDUITS"}
+	s := rand.NewSource(time.Now().Unix())
+	r := rand.New(s)
+	fmt.Println(len(g.listWordsAlien), len(g.listWordsTitanic))
+	g.mot_titanic = g.listWordsTitanic[r.Intn(len(g.listWordsTitanic))]
+	g.mot_alien = g.listWordsAlien[r.Intn(len(g.listWordsTitanic))]
 }

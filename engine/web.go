@@ -31,7 +31,7 @@ func(g *Structure) index(w http.ResponseWriter, r *http.Request) {
 }
 
 func(g *Structure) pageTitanic(w http.ResponseWriter, r *http.Request) {
-	g.defWord(g.mot_titanic)
+	g.defWord("titanic")
 	r.ParseForm()
 	g.pageHangman(w, r, 1)
 }

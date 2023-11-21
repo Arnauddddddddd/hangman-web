@@ -9,6 +9,7 @@ type Structure struct {
 	currentLetter string
 	letterTest []string
 	listWordsTitanic []string
+	listWordsAlien []string
 	mot_titanic string
 	mot_alien string
 	reset bool

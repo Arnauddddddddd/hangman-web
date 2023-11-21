@@ -34,9 +34,9 @@ func  (g *Structure) inWord(letter rune) {
 
 func (g *Structure) defWord(movie string) {
 	if movie == "alien" {
-		g.mot_secret = "ALIEN"
+		g.mot_secret = g.mot_alien
 	} else if movie == "titanic" {
-		g.mot_secret = "TITANIC"
+		g.mot_secret = g.mot_titanic
 	}
 	if len(g.mot_cachee) < len(g.mot_secret)*2 {
 		for i := 0; i < len(g.mot_secret); i++ {
