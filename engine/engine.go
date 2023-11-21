@@ -9,8 +9,8 @@ type Structure struct {
 	currentLetter string
 	letterTest []string
 	reset bool
+	reset_button string
 	win bool
-	loose bool
 	end bool
 	try int
 }

@@ -1,7 +1,6 @@
 package engine
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 )
@@ -11,7 +10,6 @@ type DrawWeb struct {
 	Motsecret string
 	Motcachee string
 	Win bool
-	Loose bool
 	Try int
 	End bool
 }
@@ -82,18 +80,26 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 	}
 	g.verifWin()
 	if g.try >= 10 {
-		g.loose = true
 		g.end = true
 	}
+
+	if g.end {
+		back := r.Form.Get("back")
+		g.reset_button = back
+		if len(g.reset_button) > 0 {
+			g.init()
+			g.index(w, r)
+			return
+		}
+	}
+
 
 	nombres := DrawWeb {
 		Motsecret: g.mot_secret,
 		Motcachee: g.mot_cachee,
 		Win: g.win,
-		Loose: g.loose,
 		Try: g.try,
 		End: g.end,
 	}
-	fmt.Println(g.currentLetter, g.letterTest, g.reset)
 	tmpl.Execute(w, nombres)
 }

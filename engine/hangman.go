@@ -55,7 +55,6 @@ func (g *Structure) verifWin() {
 			return
 		}
 	}
-	fmt.Println("GG")
 	g.win = true
 	g.end = true
 }
