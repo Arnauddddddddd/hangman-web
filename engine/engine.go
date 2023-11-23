@@ -10,8 +10,12 @@ type Structure struct {
 	letterTest []string
 	listWordsTitanic []string
 	listWordsAlien []string
+	listWordsLotr []string
+	listWordsFc []string
 	mot_titanic string
 	mot_alien string
+	mot_lotr string
+	mot_fc string
 	reset bool
 	reset_button string
 	win bool

@@ -21,6 +21,8 @@ func(g *Structure) web() {
 	http.Handle("/pictures/", http.StripPrefix("/pictures/", http.FileServer(http.Dir("pictures"))))
 	http.HandleFunc("/pageTitanic", g.pageTitanic)
 	http.HandleFunc("/pageAlien", g.pageAlien)
+	http.HandleFunc("/pageLOTR", g.pageLOTR)
+	http.HandleFunc("/pageFightclub", g.pageFightclub)
 	http.ListenAndServe(":8080", nil)
 	
 }
@@ -40,6 +42,18 @@ func(g *Structure) pageAlien(w http.ResponseWriter, r *http.Request) {
 	g.defWord("alien")
 	r.ParseForm()
 	g.pageHangman(w, r, 2)
+}
+
+func(g *Structure) pageLOTR(w http.ResponseWriter, r *http.Request) {
+	g.defWord("lotr")
+	r.ParseForm()
+	g.pageHangman(w, r, 3)
+}
+
+func(g *Structure) pageFightclub(w http.ResponseWriter, r *http.Request) {
+	g.defWord("fightclub")
+	r.ParseForm()
+	g.pageHangman(w, r, 4)
 }
 
 

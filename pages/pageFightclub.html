@@ -8,9 +8,7 @@
 
 
    <body>
-      <body background="../pictures/titanik.jpg"> </body>
-
-
+      <body background="../pictures/fightclubBG.jpg"> </body>
       <h1>   <title> HANGMAN </title>   </h1>
       <h2>  Veuillez choisir une lettre  </h2>
 
@@ -19,22 +17,22 @@
       <h3>  {{ .Motcachee }}  </h3>
       <h3>  {{ .Try }}  </h3>
 
-      {{if .End}}
+   {{if .End}}
          {{if .Win}}
             <h2>  Vous venez de gagner !!!  </h2>
             <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
-            <form action="/pageTitanic">
+            <form action="/pageFightclub">
                <button type="submit" class="button choice" name="back" value="back"> Retour au menu</button>
             </form>
          {{else}}
             <h2>  Vous venez de perdre !!!  </h2>
             <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
-            <form action="/pageTitanic">
+            <form action="/pageFightclub">
                <button type="submit" class="button choice" name="back" value="back"> Retour au menu</button>
             </form>
          {{end}}
    {{else}}
-      <form action="/pageTitanic">
+      <form action="/pageFightclub">
          <button type="submit" class="button choice" name="A" value="A"> A</button>
          <button type="submit" class="button choice" name="B" value="B"> B</button>
          <button type="submit" class="button choice" name="C" value="C"> C</button>
