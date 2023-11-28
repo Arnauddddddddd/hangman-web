@@ -19,7 +19,7 @@ func (g *Structure) init() {
 	g.reset = false
 	g.win = false
 	g.end = false
-	g.usingLetters = ""
+	g.usingLetters = " "
 	g.reset_button = ""
 	g.listWordsTitanic = []string{"PAQUEBOT", "ICEBERG", "NAVIE", "AMOUR", "NAUFRAGE", "RICHE", "PAUVRE", "SAUVETAGE", "GLACE", "OCEAN", "COULER", "DIAMANT", "PASSAGER", "COQUE", "EPAVE", "CROISIERE", "CABINE", "DETRESSE", "LUXUEUX", "CANOT"}
 	g.listWordsAlien = []string{"MORT", "CREATURE", "VAISSEAU", "SURVIVANT", "MEURTRIER", "ORGANISME", "LANCE_FLAMME", "ANDROIDE", "ESPACE", "REINE", "OEUF", "PROIE", "HOTE", "TUER", "MONSTRE", "PLANETE", "EXPLOSION", "DESTRUCTION", "SURVIE", "CONDUITS"}
