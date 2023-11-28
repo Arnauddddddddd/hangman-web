@@ -9,6 +9,7 @@ import (
 type DrawWeb struct {
 	Motsecret string
 	Motcachee string
+	Usingletters string
 	Win bool
 	Try int
 	End bool
@@ -88,6 +89,7 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 	g.currentLetter = A+B+C+D+E+F+G+H+I+J+K+L+M+N+O+P+Q+R+S+T+U+V+W+X+Y+Z
 	if len(g.currentLetter) > 0 {
 		if g.verif(rune(g.currentLetter[0])) {
+			g.usingLetters += "  " + string(g.currentLetter[0])
 			g.letterTest = append(g.letterTest, string(g.currentLetter[0]))
 			g.inWord(rune(g.currentLetter[0]))
 		}
@@ -111,6 +113,7 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 	nombres := DrawWeb {
 		Motsecret: g.mot_secret,
 		Motcachee: g.mot_cachee,
+		Usingletters: g.usingLetters,
 		Win: g.win,
 		Try: g.try,
 		End: g.end,

@@ -7,6 +7,7 @@ type Structure struct {
 	mot_secret string
 	mot_cachee string
 	currentLetter string
+	usingLetters string
 	letterTest []string
 	listWordsTitanic []string
 	listWordsAlien []string
