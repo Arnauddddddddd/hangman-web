@@ -3,6 +3,7 @@ body {
     color: #000000;
     text-align: center;
     align-content: center;
+    background-size:cover
 }
 
 
@@ -26,6 +27,13 @@ body {
   font-weight: 100;
 	src: url(/steady/titanic-police.ttf) format('woff2'),
 		url(/steady/titanic-police.ttf) format('truetype')
+}
+
+@font-face {
+	font-family: 'Jurassic';
+  font-weight: 100;
+	src: url(/steady/jurassic-police.ttf) format('woff2'),
+		url(/steady/jurassic-police.ttf) format('truetype')
 }
 
 
@@ -54,6 +62,15 @@ body {
   font-size: 30px;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(0, 0, 0);
+}
+
+.jurassic-title {
+  font-family: 'Jurassic', sans-serif;
+  color: rgba(247, 223, 5, 0);
+  font-size: 80px;
+  font-weight: 1000;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: rgba(236, 9, 9, 0.993);
 
 }
 

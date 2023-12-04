@@ -10,6 +10,7 @@ type Structure struct {
 	usingLetters string
 	letterTest []string
 	listWordsTitanic []string
+	listWordsJurassic []string
 	listWordsAlien []string
 	listWordsLotr []string
 	listWordsFc []string
@@ -17,6 +18,7 @@ type Structure struct {
 	mot_alien string
 	mot_lotr string
 	mot_fc string
+	mot_jurassic string
 	reset bool
 	reset_button string
 	win bool
