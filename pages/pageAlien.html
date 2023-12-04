@@ -9,59 +9,64 @@
 
    <body>
       <body background="../pictures/alien3.png"> </body>
-      <h1>   <title> {{ mul 5 3 }} HANGMAN </title>   </h1>
-      <h2>  Veuillez choisir une lettre  </h2>
+      <h1>   <title>  HANGMAN </title>   </h1>
+      <div class="alien-title"> <h1>   HANGMAN : ALIEN   </h1>  </div> 
+      <!-- <input type = "button" name = "test" VALUE = "atchathatcha" onclick="window.location.href = 'page2.html'"> -->
 
-      <!-- <input type = "button" name = "test" VALUE = "atchatchatcha" onclick="window.location.href = 'page2.html'"> -->
-
-      <h3>  {{ .Motcachee }}  </h3>
-      <h3>  {{ .Try }}  </h3>
-      <h3>  {{ .Usingletters }}  </h3>
+      <div class="alien-title"> 
+         <h2>  {{ .Motcachee }}  </h2>
+      </div> 
 
    {{if .End}}
          {{if .Win}}
             <h2>  Vous venez de gagner !!!  </h2>
             <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
             <form action="/pageAlien">
-               <button type="submit" class="custom-btn btn-4" name="back" value="back"> Retour au menu</button>
+               <button type="submit" class="btn-alien" name="back" value="back"> Retour au menu</button>
             </form>
          {{else}}
             <h2>  Vous venez de perdre !!!  </h2>
             <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
             <form action="/pageAlien">
-               <button type="submit" class="custom-btn btn-4" name="back" value="back"> Retour au menu</button>
+               <button type="submit" class="btn-alien" name="back" value="back"> Retour au menu</button>
             </form>
          {{end}}
    {{else}}
       <form action="/pageAlien">
-         <button type="submit" class="custom-btn btn-4" name="A" value="A"> A</button>
-         <button type="submit" class="custom-btn btn-4" name="B" value="B"> B</button>
-         <button type="submit" class="custom-btn btn-4" name="C" value="C"> C</button>
-         <button type="submit" class="custom-btn btn-4" name="D" value="D"> D</button>
-         <button type="submit" class="custom-btn btn-4" name="E" value="E"> E</button>
-         <button type="submit" class="custom-btn btn-4" name="F" value="F"> F</button>
-         <button type="submit" class="custom-btn btn-4" name="G" value="G"> G</button>
-         <button type="submit" class="custom-btn btn-4" name="H" value="H"> H</button>
-         <button type="submit" class="custom-btn btn-4" name="I" value="I"> I</button>
-         <button type="submit" class="custom-btn btn-4" name="J" value="J"> J</button>
-         <button type="submit" class="custom-btn btn-4" name="K" value="K"> K</button>
-         <button type="submit" class="custom-btn btn-4" name="L" value="L"> L</button>
+         <button type="submit" class="btn-alien" name="A" value="A"> A</button>
+         <button type="submit" class="btn-alien" name="B" value="B"> B</button>
+         <button type="submit" class="btn-alien" name="C" value="C"> C</button>
+         <button type="submit" class="btn-alien" name="D" value="D"> D</button>
+         <button type="submit" class="btn-alien" name="E" value="E"> E</button>
+         <button type="submit" class="btn-alien" name="F" value="F"> F</button>
+         <button type="submit" class="btn-alien" name="G" value="G"> G</button>
+         <button type="submit" class="btn-alien" name="H" value="H"> H</button>
+         <button type="submit" class="btn-alien" name="I" value="I"> I</button>
+         <button type="submit" class="btn-alien" name="J" value="J"> J</button>
+         <button type="submit" class="btn-alien" name="K" value="K"> K</button>
+         <button type="submit" class="btn-alien" name="L" value="L"> L</button>
          <br><br>
-         <button type="submit" class="custom-btn btn-4" name="M" value="M"> M</button>
-         <button type="submit" class="custom-btn btn-4" name="N" value="N"> N</button>
-         <button type="submit" class="custom-btn btn-4" name="O" value="O"> O</button>
-         <button type="submit" class="custom-btn btn-4" name="P" value="P"> P</button>
-         <button type="submit" class="custom-btn btn-4" name="Q" value="Q"> Q</button>
-         <button type="submit" class="custom-btn btn-4" name="R" value="R"> R</button>
-         <button type="submit" class="custom-btn btn-4" name="S" value="S"> S</button>
-         <button type="submit" class="custom-btn btn-4" name="T" value="T"> T</button>
-         <button type="submit" class="custom-btn btn-4" name="U" value="U"> U</button>
-         <button type="submit" class="custom-btn btn-4" name="V" value="V"> V</button>
-         <button type="submit" class="custom-btn btn-4" name="W" value="W"> W</button>
-         <button type="submit" class="custom-btn btn-4" name="X" value="X"> X</button>
-         <button type="submit" class="custom-btn btn-4" name="Y" value="Y"> Y</button>
-         <button type="submit" class="custom-btn btn-4" name="Z" value="Z"> Z</button>
+         <button type="submit" class="btn-alien" name="M" value="M"> M</button>
+         <button type="submit" class="btn-alien" name="N" value="N"> N</button>
+         <button type="submit" class="btn-alien" name="O" value="O"> O</button>
+         <button type="submit" class="btn-alien" name="P" value="P"> P</button>
+         <button type="submit" class="btn-alien" name="Q" value="Q"> Q</button>
+         <button type="submit" class="btn-alien" name="R" value="R"> R</button>
+         <button type="submit" class="btn-alien" name="S" value="S"> S</button>
+         <button type="submit" class="btn-alien" name="T" value="T"> T</button>
+         <button type="submit" class="btn-alien" name="U" value="U"> U</button>
+         <button type="submit" class="btn-alien" name="V" value="V"> V</button>
+         <button type="submit" class="btn-alien" name="W" value="W"> W</button>
+         <button type="submit" class="btn-alien" name="X" value="X"> X</button>
+         <button type="submit" class="btn-alien" name="Y" value="Y"> Y</button>
+         <button type="submit" class="btn-alien" name="Z" value="Z"> Z</button>
    {{end}}
+
+   <div class="alien-title"> 
+      <h2>  {{ .Try }}  </h3>
+      <h2>  {{ .Usingletters }}  </h2>
+   </div> 
+   
 
    </body>
 </html>

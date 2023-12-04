@@ -11,14 +11,10 @@
       <body background="../pictures/titanicccccc.jpg"> </body>
 
 
-      <h1>   <title> HANGMAN </title>   </h1>
-      <h2>  Veuillez choisir une lettre  </h2>
+      <div class="titanic-title"> <h1>   HANGMAN : TITANIC   </h1> 
 
-      <!-- <input type = "button" name = "test" VALUE = "atchatchatcha" onclick="window.location.href = 'page2.html'"> -->
-
-      <h3>  {{ .Motcachee }}  </h3>
-      <h3>  {{ .Try }}  </h3>
-      <h3>  {{ .Usingletters }}  </h3>
+         <h2>  {{ .Motcachee }}  </h2>
+      </div> 
 
       {{if .End}}
          {{if .Win}}
@@ -35,9 +31,15 @@
             </form>
          {{end}}
    {{else}}
+
+
+
+
       <form action="/pageTitanic">
-         <button type="submit" class="custom-btn btn-2" name="A" value="A"> A</button>
-         <button type="submit" class="custom-btn btn-2" name="B" value="B"> B</button>
+         
+
+         <button type="submit" class="custom-btn btn-2" name="A" value="A"> A </button>
+         <button type="submit" class="custom-btn btn-2" name="B" value="B"> B </button>
          <button type="submit" class="custom-btn btn-2" name="C" value="C"> C</button>
          <button type="submit" class="custom-btn btn-2" name="D" value="D"> D</button>
          <button type="submit" class="custom-btn btn-2" name="E" value="E"> E</button>
@@ -63,6 +65,12 @@
          <button type="submit" class="custom-btn btn-2" name="Y" value="Y"> Y</button>
          <button type="submit" class="custom-btn btn-2" name="Z" value="Z"> Z</button>
    {{end}}
+
+   <div class="titanic-title">
+      <h3>  {{ .Try }}  </h3>
+      <h3>  {{ .Usingletters }}  </h3>
+   </div> 
+
 
    </body>
 </html>
