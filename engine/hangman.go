@@ -42,7 +42,7 @@ func (g *Structure) defWord(movie string) {
 	} else if movie == "fightclub" {
 		g.mot_secret = g.mot_fc
 	} else if movie == "jurassic" {
-		g.mot_secret = g.mot_fc
+		g.mot_secret = g.mot_jurassic
 	}
 	if len(g.mot_cachee) < len(g.mot_secret)*2 {
 		for i := 0; i < len(g.mot_secret); i++ {
