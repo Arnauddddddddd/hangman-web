@@ -10,58 +10,64 @@
    <body>
       <body background="../pictures/bglotr2.jpg"> </body>
       <img src="../pictures/lotrtext.png" height="10%" width="60%">
-      <h1>   <title> HANGMAN </title>   </h1>
-      <h2>  Veuillez choisir une lettre  </h2>
 
       <!-- <input type = "button" name = "test" VALUE = "atchatchatcha" onclick="window.location.href = 'page2.html'"> -->
 
-      <h3>  {{ .Motcachee }}  </h3>
-      <h3>  {{ .Try }}  </h3>
-      <h3>  {{ .Usingletters }}  </h3>
+      <div class="lotr">
+         <h3>  {{ .Motcachee }}  </h3>
+      </div> 
+
 
    {{if .End}}
          {{if .Win}}
             <h2>  Vous venez de gagner !!!  </h2>
             <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
             <form action="/pageLOTR">
-               <button type="submit" class="custom-btn btn-3" name="back" value="back"> Retour au menu</button>
+               <button type="submit" class="fireButton" name="back" value="back"> Retour au menu</button>
             </form>
          {{else}}
             <h2>  Vous venez de perdre !!!  </h2>
             <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
             <form action="/pageLOTR">
-               <button type="submit" class="custom-btn btn-3" name="back" value="back"> Retour au menu</button>
+               <button type="submit" class="fireButton" name="back" value="back"> Retour au menu</button>
             </form>
          {{end}}
    {{else}}
       <form action="/pageLOTR">
-         <button type="submit" class="container" name="A" value="A"> A</button>
-         <button type="submit" class="custom-btn btn-3" name="B" value="B"> B</button>
-         <button type="submit" class="custom-btn btn-3" name="C" value="C"> C</button>
-         <button type="submit" class="custom-btn btn-3" name="D" value="D"> D</button>
-         <button type="submit" class="custom-btn btn-3" name="E" value="E"> E</button>
-         <button type="submit" class="custom-btn btn-3" name="F" value="F"> F</button>
-         <button type="submit" class="custom-btn btn-3" name="G" value="G"> G</button>
-         <button type="submit" class="custom-btn btn-3" name="H" value="H"> H</button>
-         <button type="submit" class="custom-btn btn-3" name="I" value="I"> I</button>
-         <button type="submit" class="custom-btn btn-3" name="J" value="J"> J</button>
-         <button type="submit" class="custom-btn btn-3" name="K" value="K"> K</button>
-         <button type="submit" class="custom-btn btn-3" name="L" value="L"> L</button>
-         <button type="submit" class="custom-btn btn-3" name="M" value="M"> M</button>
-         <button type="submit" class="custom-btn btn-3" name="N" value="N"> N</button>
-         <button type="submit" class="custom-btn btn-3" name="O" value="O"> O</button>
-         <button type="submit" class="custom-btn btn-3" name="P" value="P"> P</button>
-         <button type="submit" class="custom-btn btn-3" name="Q" value="Q"> Q</button>
-         <button type="submit" class="custom-btn btn-3" name="R" value="R"> R</button>
-         <button type="submit" class="custom-btn btn-3" name="S" value="S"> S</button>
-         <button type="submit" class="custom-btn btn-3" name="T" value="T"> T</button>
-         <button type="submit" class="custom-btn btn-3" name="U" value="U"> U</button>
-         <button type="submit" class="custom-btn btn-3" name="V" value="V"> V</button>
-         <button type="submit" class="custom-btn btn-3" name="W" value="W"> W</button>
-         <button type="submit" class="custom-btn btn-3" name="X" value="X"> X</button>
-         <button type="submit" class="custom-btn btn-3" name="Y" value="Y"> Y</button>
-         <button type="submit" class="custom-btn btn-3" name="Z" value="Z"> Z</button>
+         <div class="lotr">
+         <button type="submit" class="fireButton" name="A" value="A"> A</button>
+         <button type="submit" class="fireButton" name="B" value="B"> B</button>
+         <button type="submit" class="fireButton" name="C" value="C"> C</button>
+         <button type="submit" class="fireButton" name="D" value="D"> D</button>
+         <button type="submit" class="fireButton" name="E" value="E"> E</button>
+         <button type="submit" class="fireButton" name="F" value="F"> F</button>
+         <button type="submit" class="fireButton" name="G" value="G"> G</button>
+         <button type="submit" class="fireButton" name="H" value="H"> H</button>
+         <button type="submit" class="fireButton" name="I" value="I"> I</button>
+         <button type="submit" class="fireButton" name="J" value="J"> J</button>
+         <button type="submit" class="fireButton" name="K" value="K"> K</button>
+         <button type="submit" class="fireButton" name="L" value="L"> L</button>
+         <button type="submit" class="fireButton" name="M" value="M"> M</button>
+         <button type="submit" class="fireButton" name="N" value="N"> N</button>
+         <button type="submit" class="fireButton" name="O" value="O"> O</button>
+         <button type="submit" class="fireButton" name="P" value="P"> P</button>
+         <button type="submit" class="fireButton" name="Q" value="Q"> Q</button>
+         <button type="submit" class="fireButton" name="R" value="R"> R</button>
+         <button type="submit" class="fireButton" name="S" value="S"> S</button>
+         <button type="submit" class="fireButton" name="T" value="T"> T</button>
+         <button type="submit" class="fireButton" name="U" value="U"> U</button>
+         <button type="submit" class="fireButton" name="V" value="V"> V</button>
+         <button type="submit" class="fireButton" name="W" value="W"> W</button>
+         <button type="submit" class="fireButton" name="X" value="X"> X</button>
+         <button type="submit" class="fireButton" name="Y" value="Y"> Y</button>
+         <button type="submit" class="fireButton" name="Z" value="Z"> Z</button>
+         </div> 
    {{end}}
+
+   <div class="lotr">
+      <h3>  {{ .Try }}  </h3>
+      <h3>  {{ .Usingletters }}  </h3>
+   </div> 
 
    </body>
 </html>
