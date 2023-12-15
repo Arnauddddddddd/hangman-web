@@ -23,17 +23,18 @@
 
       {{if .End}}
          {{if .Win}}
+         <div class="jurassic">
             <h2>  Vous venez de gagner !!!  </h2>
-            <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
             <form action="/pageJurassic">
                <button type="submit" class="primary-button" name="back" value="back"> Retour au menu</button>
             </form>
          {{else}}
             <h2>  Vous venez de perdre !!!  </h2>
-            <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
+            <h2>  Le mot était tout simplement : {{ .Motsecret }} </h2>
             <form action="/pageJurassic">
                <button type="submit" class="primary-button" name="back" value="back"> Retour au menu</button>
             </form>
+         </div>
          {{end}}
    {{else}}
 

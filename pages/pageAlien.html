@@ -19,17 +19,20 @@
 
    {{if .End}}
          {{if .Win}}
+         <div class="alien-title">
             <h2>  Vous venez de gagner !!!  </h2>
-            <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
             <form action="/pageAlien">
                <button type="submit" class="btn-alien" name="back" value="back"> Retour au menu</button>
             </form>
+         </div>
          {{else}}
+           <div class="alien-title">
             <h2>  Vous venez de perdre !!!  </h2>
-            <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
+            <h2>  Le mot était tout simplement : {{ .Motsecret }} </h2>
             <form action="/pageAlien">
                <button type="submit" class="btn-alien" name="back" value="back"> Retour au menu</button>
             </form>
+         </div>
          {{end}}
    {{else}}
       <form action="/pageAlien">

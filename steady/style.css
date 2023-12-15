@@ -933,11 +933,11 @@ button {
 
 
 .watterButton {
-  background-color: #000;
+  background-color: rgb(37, 99, 192)000;
   border: 0px;
   outline: 0px;
   color: #fff;
-  width: 85px;
+  width: 70px;
   padding: 20px;
   border-radius: 50px;
   position: relative;
@@ -946,14 +946,14 @@ button {
 }
 
 .liquid {
-  background-color: #2893eb;
+  background-color: #1f7ac4;
   width: 100px;
-  height: 50px;
+  height: 70px;
   position: absolute;
   bottom: 0;
   left: 0;
-  box-shadow: inset 5px -5px 25px #104e81,
-  inset -5px 0px 25px #104e81;
+  box-shadow: inset 5px -5px 25px #0d4370,
+  inset -5px 0px 25px #000000;
 }
 
 .liquid::after {
@@ -973,13 +973,13 @@ button {
   content: '';
   width: 450px;
   height: 400px;
-  background-color: rgb(68, 160, 235);
+  background-color: rgba(51, 126, 207, 0.553);
   z-index: 1;
   position: absolute;
   left: -110px;
   top: -380px;
-  border-radius: 0%;
-  animation: animate 10s linear 3.2s infinite;
+  border-radius: 40%;
+  animation: animate 10s linear 3.6s infinite;
 }
 
 .btn-txt {

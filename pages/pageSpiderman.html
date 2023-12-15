@@ -20,17 +20,18 @@
 
       {{if .End}}
          {{if .Win}}
+         <div class="spiderman">
             <h2>  Vous venez de gagner !!!  </h2>
-            <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
             <form action="/pageSpiderman">
                <button type="submit" class="primary-button" name="back" value="back"> Retour au menu</button>
             </form>
          {{else}}
             <h2>  Vous venez de perdre !!!  </h2>
-            <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
+            <h2>  Le mot était tout simplement : {{ .Motsecret }} </h2>
             <form action="/pageSpiderman">
                <button type="submit" class="primary-button" name="back" value="back"> Retour au menu</button>
             </form>
+         </div>
          {{end}}
    {{else}}
 
@@ -69,7 +70,6 @@
          <button type="submit" class="primary-button" name="Z" value="Z"> Z</button>
         </div>
 
-kkk
    {{end}}
    
 

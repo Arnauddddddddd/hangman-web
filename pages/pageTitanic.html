@@ -18,17 +18,18 @@
 
       {{if .End}}
          {{if .Win}}
+         <div class="titanic-title">
             <h2>  Vous venez de gagner !!!  </h2>
-            <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
             <form action="/pageTitanic">
                <button type="submit" class="custom-btn btn-2" name="back" value="back"> Retour au menu</button>
             </form>
          {{else}}
             <h2>  Vous venez de perdre !!!  </h2>
-            <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
+            <h2>  Le mot était tout simplement : {{ .Motsecret }} </h2>
             <form action="/pageTitanic">
                <button type="submit" class="custom-btn btn-2" name="back" value="back"> Retour au menu</button>
             </form>
+         </div>
          {{end}}
    {{else}}
 
