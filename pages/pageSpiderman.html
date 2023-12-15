@@ -1,0 +1,83 @@
+<html>
+   <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="../steady/style.css"> 
+         <title> HANGMAN </title>
+   </head>
+
+
+   <body>
+    <body background="../pictures/spidermanBG.jpg"> </body>
+      <div class="spiderman">  
+         <h1>   HANGMAN &ensp;&ensp; SPIDERMAN  </h1>
+
+      <div class="">
+      <br>
+         <h2>  {{ .Motcachee }}  </h2>
+      </div>
+      </div>
+
+      {{if .End}}
+         {{if .Win}}
+            <h2>  Vous venez de gagner !!!  </h2>
+            <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
+            <form action="/pageSpiderman">
+               <button type="submit" class="primary-button" name="back" value="back"> Retour au menu</button>
+            </form>
+         {{else}}
+            <h2>  Vous venez de perdre !!!  </h2>
+            <h2>  ATCHATCHATCHATCHATCHATCHATCHATCHATCHA </h2>
+            <form action="/pageSpiderman">
+               <button type="submit" class="primary-button" name="back" value="back"> Retour au menu</button>
+            </form>
+         {{end}}
+   {{else}}
+
+
+
+
+      <form action="/pageSpiderman">
+         
+         
+         <div class="button-borders">
+         <button type="submit" class="primary-button" name="A" value="A"> A </button>
+         <button type="submit" class="primary-button" name="B" value="B"> B </button>
+         <button type="submit" class="primary-button" name="C" value="C"> C</button>
+         <button type="submit" class="primary-button" name="D" value="D"> D</button>
+         <button type="submit" class="primary-button" name="E" value="E"> E</button>
+         <button type="submit" class="primary-button" name="F" value="F"> F</button>
+         <button type="submit" class="primary-button" name="G" value="G"> G</button>
+         <button type="submit" class="primary-button" name="H" value="H"> H</button>
+         <button type="submit" class="primary-button" name="I" value="I"> I</button>
+         <button type="submit" class="primary-button" name="J" value="J"> J</button>
+         <button type="submit" class="primary-button" name="K" value="K"> K</button>
+         <button type="submit" class="primary-button" name="L" value="L"> L</button>
+         <button type="submit" class="primary-button" name="M" value="M"> M</button>
+         <button type="submit" class="primary-button" name="N" value="N"> N</button>
+         <button type="submit" class="primary-button" name="O" value="O"> O</button>
+         <button type="submit" class="primary-button" name="P" value="P"> P</button>
+         <button type="submit" class="primary-button" name="Q" value="Q"> Q</button>
+         <button type="submit" class="primary-button" name="R" value="R"> R</button>
+         <button type="submit" class="primary-button" name="S" value="S"> S</button>
+         <button type="submit" class="primary-button" name="T" value="T"> T</button>
+         <button type="submit" class="primary-button" name="U" value="U"> U</button>
+         <button type="submit" class="primary-button" name="V" value="V"> V</button>
+         <button type="submit" class="primary-button" name="W" value="W"> W</button>
+         <button type="submit" class="primary-button" name="X" value="X"> X</button>
+         <button type="submit" class="primary-button" name="Y" value="Y"> Y</button>
+         <button type="submit" class="primary-button" name="Z" value="Z"> Z</button>
+        </div>
+
+kkk
+   {{end}}
+   
+
+   <div class="spiderman">
+      <h3>  {{ .Try }}  </h3>
+      <h3>  {{ .Usingletters }}  </h3>
+   </div> 
+
+
+   </body>
+</html>

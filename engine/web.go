@@ -25,6 +25,7 @@ func(g *Structure) web() {
 	http.HandleFunc("/pageLOTR", g.pageLOTR)
 	http.HandleFunc("/pageFightclub", g.pageFightclub)
 	http.HandleFunc("/pageJurassic", g.pageJurassic)
+	http.HandleFunc("/pageSpiderman", g.pageSpiderman)
 	http.ListenAndServe(":8080", nil)
 	
 }
@@ -62,6 +63,12 @@ func(g *Structure) pageJurassic(w http.ResponseWriter, r *http.Request) {
 	g.defWord("jurassic")
 	r.ParseForm()
 	g.pageHangman(w, r, 5)
+}
+
+func(g *Structure) pageSpiderman(w http.ResponseWriter, r *http.Request) {
+	g.defWord("spiderman")
+	r.ParseForm()
+	g.pageHangman(w, r, 6)
 }
 
 
