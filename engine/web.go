@@ -20,6 +20,8 @@ func(g *Structure) web() {
 	http.HandleFunc("/", g.index)
 	http.Handle("/steady/", http.StripPrefix("/steady/", http.FileServer(http.Dir("steady"))))
 	http.Handle("/pictures/", http.StripPrefix("/pictures/", http.FileServer(http.Dir("pictures"))))
+	http.Handle("/police/", http.StripPrefix("/police/", http.FileServer(http.Dir("police"))))
+	http.Handle("/audio/", http.StripPrefix("/audio/", http.FileServer(http.Dir("audio"))))
 	http.HandleFunc("/pageTitanic", g.pageTitanic)
 	http.HandleFunc("/pageAlien", g.pageAlien)
 	http.HandleFunc("/pageLOTR", g.pageLOTR)
@@ -74,32 +76,10 @@ func(g *Structure) pageSpiderman(w http.ResponseWriter, r *http.Request) {
 
 func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice int) {
 	tmpl := template.Must(template.ParseFiles(g.list_web_page[indice]))
-	A := r.Form.Get("A")
-	B := r.Form.Get("B")
-	C := r.Form.Get("C")
-	D := r.Form.Get("D")
-	E := r.Form.Get("E")
-	F := r.Form.Get("F")
-	G := r.Form.Get("G")
-	H := r.Form.Get("H")
-	I := r.Form.Get("I")
-	J := r.Form.Get("J")
-	K := r.Form.Get("K")
-	L := r.Form.Get("L")
-	M := r.Form.Get("M")
-	N := r.Form.Get("N")
-	O := r.Form.Get("O")
-	P := r.Form.Get("P")
-	Q := r.Form.Get("Q")
-	R := r.Form.Get("R")
-	S := r.Form.Get("S")
-	T := r.Form.Get("T")
-	U := r.Form.Get("U")
-	V := r.Form.Get("V")
-	W := r.Form.Get("W")
-	X := r.Form.Get("X")
-	Y := r.Form.Get("Y")
-	Z := r.Form.Get("Z")
+	A, B, C, D, E, F, G :=  r.Form.Get("A"), r.Form.Get("B"), r.Form.Get("C"), r.Form.Get("D"), r.Form.Get("E"), r.Form.Get("F"), r.Form.Get("G")
+	H, I, J, K, L, M, N :=  r.Form.Get("H"), r.Form.Get("I"), r.Form.Get("J"), r.Form.Get("K"), r.Form.Get("L"), r.Form.Get("M"), r.Form.Get("N")
+	O, P, Q, R, S, T, U :=  r.Form.Get("O"), r.Form.Get("P"), r.Form.Get("Q"), r.Form.Get("R"), r.Form.Get("S"), r.Form.Get("T"), r.Form.Get("U")
+	V, W, X, Y, Z :=        r.Form.Get("V"), r.Form.Get("W"), r.Form.Get("X"), r.Form.Get("Y"), r.Form.Get("Z")
 	g.currentLetter = A+B+C+D+E+F+G+H+I+J+K+L+M+N+O+P+Q+R+S+T+U+V+W+X+Y+Z
 	if len(g.currentLetter) > 0 {
 		if g.verif(rune(g.currentLetter[0])) {
@@ -112,7 +92,6 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 	if g.try >= 10 {
 		g.end = true
 	}
-
 	if g.end {
 		back := r.Form.Get("back")
 		g.reset_button = back
@@ -124,7 +103,7 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 	}
 
 
-	nombres := DrawWeb {
+	web := DrawWeb {
 		Motsecret: g.mot_secret,
 		Motcachee: g.mot_cachee,
 		Usingletters: g.usingLetters,
@@ -132,5 +111,5 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 		Try: g.try,
 		End: g.end,
 	}
-	tmpl.Execute(w, nombres)
+	tmpl.Execute(w, web)
 }

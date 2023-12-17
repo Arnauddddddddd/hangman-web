@@ -66,3 +66,4 @@ func (g *Structure) verifWin() {
 	g.win = true
 	g.end = true
 }
+

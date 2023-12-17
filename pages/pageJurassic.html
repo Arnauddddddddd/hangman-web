@@ -8,17 +8,20 @@
 
 
    <body>
+       
     <body background="../pictures/jp2.jpg"> </body>
       <div class="jurassic-title">  
          <h1>   HANGMAN  JURASSIC PARK  </h1>
-      </div> 
+      </div>
+
+      <div class="button-borders">
+         <audio loop="loop" autoplay="autoplay">
+         <source src="../audio/jurassic.mp3" vol>
+         </audio>
+      </div>
 
       <div class="jurassic">
          <h2>  {{ .Motcachee }}  </h2>
-      </div> 
-         
-
-
       </div>
 
       {{if .End}}
