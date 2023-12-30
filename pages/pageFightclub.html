@@ -27,13 +27,14 @@
          <div class="fight-club-title">  
             <h2>  Vous venez de gagner !!!  </h2>
             <form action="/pageFightclub">
-               <button type="submit" class="glowing-btn" name="back" value="back"> Menu</button>
+               <button type="submit" class="fightclub-btn" name="back" value="back"> Menu</button>
             </form>
          {{else}}
-            <h2>  Vous venez de perdre !!!  </h2>
-            <h2>  Le mot était tout simplement : {{ .Motsecret }} </h2>
+         <div class="fight-club-title">  
+            <h5>  Vous venez de perdre !!!  </h5>
+            <h5>  Le mot etait tout simplement : {{ .Motsecret }} </h5>
             <form action="/pageFightclub">
-               <button type="submit" class="glowing-btn" name="back" value="back"> Menu</button>
+               <button type="submit" class="fightclub-btn" name="back" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
@@ -46,43 +47,43 @@
             
 
          <div>
-            <button type="submit" class="glowing-btn" name="A" value="A"> A</button>
-            <button type="submit" class="glowing-btn" name="B" value="B"> B</button>
-            <button type="submit" class="glowing-btn" name="C" value="C"> C</button>
-            <button type="submit" class="glowing-btn" name="D" value="D"> D</button>
-            <button type="submit" class="glowing-btn" name="E" value="E"> E</button>
-            <button type="submit" class="glowing-btn" name="F" value="F"> F</button>
-            <button type="submit" class="glowing-btn" name="G" value="G"> G</button>
+            <button type="submit" class="fightclub-btn" name="A" value="A"> A</button>
+            <button type="submit" class="fightclub-btn" name="B" value="B"> B</button>
+            <button type="submit" class="fightclub-btn" name="C" value="C"> C</button>
+            <button type="submit" class="fightclub-btn" name="D" value="D"> D</button>
+            <button type="submit" class="fightclub-btn" name="E" value="E"> E</button>
+            <button type="submit" class="fightclub-btn" name="F" value="F"> F</button>
+            <button type="submit" class="fightclub-btn" name="G" value="G"> G</button>
             <br><br>
-            <button type="submit" class="glowing-btn" name="H" value="H"> H</button>
-            <button type="submit" class="glowing-btn" name="I" value="I"> I</button>
-            <button type="submit" class="glowing-btn" name="J" value="J"> J</button>
-            <button type="submit" class="glowing-btn" name="K" value="K"> K</button>
-            <button type="submit" class="glowing-btn" name="L" value="L"> L</button>
-            <button type="submit" class="glowing-btn" name="M" value="M"> M</button>
-            <button type="submit" class="glowing-btn" name="N" value="N"> N</button>
+            <button type="submit" class="fightclub-btn" name="H" value="H"> H</button>
+            <button type="submit" class="fightclub-btn" name="I" value="I"> I</button>
+            <button type="submit" class="fightclub-btn" name="J" value="J"> J</button>
+            <button type="submit" class="fightclub-btn" name="K" value="K"> K</button>
+            <button type="submit" class="fightclub-btn" name="L" value="L"> L</button>
+            <button type="submit" class="fightclub-btn" name="M" value="M"> M</button>
+            <button type="submit" class="fightclub-btn" name="N" value="N"> N</button>
          </div>
 
          <div class="fight-club-title">  
-            <h3>  {{ .Motcachee }}  </h3>
+            <h3>  {{ .Motcachee }}  &ensp; </h3>
          </div>
 
 
          <div> 
 
-         <button type="submit" class="glowing-btn" name="O" value="O"> O</button>
-         <button type="submit" class="glowing-btn" name="P" value="P"> P</button>
-         <button type="submit" class="glowing-btn" name="Q" value="Q"> Q</button>
-         <button type="submit" class="glowing-btn" name="R" value="R"> R</button>
-         <button type="submit" class="glowing-btn" name="S" value="S"> S</button>
-         <button type="submit" class="glowing-btn" name="T" value="T"> T</button>
+         <button type="submit" class="fightclub-btn" name="O" value="O"> O</button>
+         <button type="submit" class="fightclub-btn" name="P" value="P"> P</button>
+         <button type="submit" class="fightclub-btn" name="Q" value="Q"> Q</button>
+         <button type="submit" class="fightclub-btn" name="R" value="R"> R</button>
+         <button type="submit" class="fightclub-btn" name="S" value="S"> S</button>
+         <button type="submit" class="fightclub-btn" name="T" value="T"> T</button>
          <br><br>
-         <button type="submit" class="glowing-btn" name="U" value="U"> U</button>
-         <button type="submit" class="glowing-btn" name="V" value="V"> V</button>
-         <button type="submit" class="glowing-btn" name="W" value="W"> W</button>
-         <button type="submit" class="glowing-btn" name="X" value="X"> X</button>
-         <button type="submit" class="glowing-btn" name="Y" value="Y"> Y</button>
-         <button type="submit" class="glowing-btn" name="Z" value="Z"> Z</button>
+         <button type="submit" class="fightclub-btn" name="U" value="U"> U</button>
+         <button type="submit" class="fightclub-btn" name="V" value="V"> V</button>
+         <button type="submit" class="fightclub-btn" name="W" value="W"> W</button>
+         <button type="submit" class="fightclub-btn" name="X" value="X"> X</button>
+         <button type="submit" class="fightclub-btn" name="Y" value="Y"> Y</button>
+         <button type="submit" class="fightclub-btn" name="Z" value="Z"> Z</button>
 
          </div>
 
@@ -92,14 +93,14 @@
    {{end}}
 
    <div class="fight-club-title">  
-      <h3>  {{ .Try }}  </h3>
-      <h3>  {{ .Usingletters }}  </h3>
+      <h6>  {{ .Try }}  </h6>
+      <h6>  &ensp; {{ .Usingletters }}  &ensp; </h6>
    </div>
 
    {{if .End}}
    {{else}}
    <form action="/pageFightclub">
-      <button type="submit" class="glowing-btn" name="giveup" value="giveup"> FF </button>
+      <button type="submit" class="fightclub-btn" name="giveup" value="giveup"> FF </button>
    </form>
    {{end}}
 

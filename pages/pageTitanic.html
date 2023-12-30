@@ -6,6 +6,12 @@
          <title> HANGMAN </title>
    </head>
 
+   <div class="button-borders">
+      <audio loop="loop" autoplay="autoplay">
+      <source src="../audio/titanic.mp3" vol>
+      </audio>
+   </div>
+
 
    <body>
       <body background="../pictures/titanicccccc.jpg"> </body>
@@ -19,15 +25,17 @@
       {{if .End}}
          {{if .Win}}
          <div class="titanic-title">
-            <h2>  Vous venez de gagner !!!  </h2>
+            <h3>  Vous venez de gagner !!!  </h3>
             <form action="/pageTitanic">
-               <button type="submit" class="custom-btn btn-2" name="back" value="back"> Menu</button>
+               <button type="submit" class="titanic-btn" name="back" value="back"> Menu</button>
             </form>
+         </div>
          {{else}}
-            <h2>  Vous venez de perdre !!!  </h2>
-            <h2>  Le mot était tout simplement : {{ .Motsecret }} </h2>
+         <div class="titanic-title">
+            <h3>  Vous venez de perdre !!!  </h3>
+            <h3>  Le mot etait tout simplement : {{ .Motsecret }} </h3>
             <form action="/pageTitanic">
-               <button type="submit" class="custom-btn btn-2" name="back" value="back"> Menu</button>
+               <button type="submit" class="titanic-btn" name="back" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
@@ -38,59 +46,59 @@
 
       <form action="/pageTitanic">
          
-         <button class="watterButton" type="submit" name="A" value="A"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="A" value="A"> <span class="liquid"></span>  
          <span class="btn-txt">A</span> </button>
-         <button class="watterButton" type="submit" name="B" value="B"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="B" value="B"> <span class="liquid"></span>  
          <span class="btn-txt">B</span> </button>
-         <button class="watterButton" type="submit" name="C" value="C"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="C" value="C"> <span class="liquid"></span>  
          <span class="btn-txt">C</span> </button>
-         <button class="watterButton" type="submit" name="D" value="D"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="D" value="D"> <span class="liquid"></span>  
          <span class="btn-txt">D</span> </button>
-         <button class="watterButton" type="submit" name="E" value="E"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="E" value="E"> <span class="liquid"></span>  
          <span class="btn-txt">E</span> </button>
-         <button class="watterButton" type="submit" name="F" value="F"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="F" value="F"> <span class="liquid"></span>  
          <span class="btn-txt">F</span> </button>
-         <button class="watterButton" type="submit" name="G" value="G"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="G" value="G"> <span class="liquid"></span>  
          <span class="btn-txt">G</span> </button>
-         <button class="watterButton" type="submit" name="H" value="H"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="H" value="H"> <span class="liquid"></span>  
          <span class="btn-txt">H</span> </button>
-         <button class="watterButton" type="submit" name="I" value="I"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="I" value="I"> <span class="liquid"></span>  
          <span class="btn-txt">I</span> </button>
-         <button class="watterButton" type="submit" name="J" value="J"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="J" value="J"> <span class="liquid"></span>  
          <span class="btn-txt">J</span> </button>
-         <button class="watterButton" type="submit" name="K" value="K"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="K" value="K"> <span class="liquid"></span>  
          <span class="btn-txt">K</span> </button>
-         <button class="watterButton" type="submit" name="L" value="L"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="L" value="L"> <span class="liquid"></span>  
          <span class="btn-txt">L</span> </button>
-         <button class="watterButton" type="submit" name="M" value="M"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="M" value="M"> <span class="liquid"></span>  
          <span class="btn-txt">M</span> </button>
-         <button class="watterButton" type="submit" name="N" value="N"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="N" value="N"> <span class="liquid"></span>  
          <span class="btn-txt">N</span> </button>
-         <button class="watterButton" type="submit" name="O" value="O"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="O" value="O"> <span class="liquid"></span>  
          <span class="btn-txt">O</span> </button>
-         <button class="watterButton" type="submit" name="P" value="P"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="P" value="P"> <span class="liquid"></span>  
          <span class="btn-txt">P</span> </button>
-         <button class="watterButton" type="submit" name="Q" value="Q"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="Q" value="Q"> <span class="liquid"></span>  
          <span class="btn-txt">Q</span> </button>
-         <button class="watterButton" type="submit" name="R" value="R"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="R" value="R"> <span class="liquid"></span>  
          <span class="btn-txt">R</span> </button>
-         <button class="watterButton" type="submit" name="S" value="S"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="S" value="S"> <span class="liquid"></span>  
          <span class="btn-txt">S</span> </button>
-         <button class="watterButton" type="submit" name="T" value="T"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="T" value="T"> <span class="liquid"></span>  
          <span class="btn-txt">T</span> </button>
-         <button class="watterButton" type="submit" name="U" value="U"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="U" value="U"> <span class="liquid"></span>  
          <span class="btn-txt">U</span> </button>
-         <button class="watterButton" type="submit" name="U" value="U"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="U" value="U"> <span class="liquid"></span>  
          <span class="btn-txt">U</span> </button>
-         <button class="watterButton" type="submit" name="V" value="V"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="V" value="V"> <span class="liquid"></span>  
          <span class="btn-txt">V</span> </button>
-         <button class="watterButton" type="submit" name="W" value="W"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="W" value="W"> <span class="liquid"></span>  
          <span class="btn-txt">W</span> </button>
-         <button class="watterButton" type="submit" name="X" value="X"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="X" value="X"> <span class="liquid"></span>  
          <span class="btn-txt">X</span> </button>
-         <button class="watterButton" type="submit" name="Y" value="Y"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="Y" value="Y"> <span class="liquid"></span>  
          <span class="btn-txt">Y</span> </button>
-         <button class="watterButton" type="submit" name="Z" value="Z"> <span class="liquid"></span>  
+         <button class="titanic-btn" type="submit" name="Z" value="Z"> <span class="liquid"></span>  
          <span class="btn-txt">Z</span> </button>
          
 
@@ -99,7 +107,7 @@
 
    <div class="titanic-title">
       <h3>  {{ .Try }}  </h3>
-      <h3>  {{ .Usingletters }}  </h3>
+      <h3>  &ensp; {{ .Usingletters }} &ensp; </h3>
    </div> 
 
    {{if .End}}

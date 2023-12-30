@@ -21,21 +21,23 @@
       </div>
 
       <div class="jurassic">
-         <h2>  {{ .Motcachee }}  </h2>
+         <h2>  &ensp; {{ .Motcachee }}  </h2>
       </div>
 
       {{if .End}}
          {{if .Win}}
          <div class="jurassic">
-            <h2>  Vous venez de gagner !!!  </h2>
+            <h3>  Vous venez de gagner !!!  </h3>
             <form action="/pageJurassic">
-               <button type="submit" class="primary-button" name="back" value="back"> Menu</button>
+               <button type="submit" class="jurassic-btn" name="back" value="back"> Menu</button>
             </form>
+         </div>
          {{else}}
-            <h2>  Vous venez de perdre !!!  </h2>
-            <h2>  Le mot était tout simplement : {{ .Motsecret }} </h2>
+         <div class="jurassic">  
+            <h4>  Vous venez de perdre !!!  </h4>
+            <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
             <form action="/pageJurassic">
-               <button type="submit" class="primary-button" name="back" value="back"> Menu</button>
+               <button type="submit" class="jurassic-btn" name="back" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
@@ -47,46 +49,47 @@
       <form action="/pageJurassic">
          
          <div class="button-borders">
-         <button type="submit" class="primary-button" name="A" value="A"> A </button>
-         <button type="submit" class="primary-button" name="B" value="B"> B </button>
-         <button type="submit" class="primary-button" name="C" value="C"> C</button>
-         <button type="submit" class="primary-button" name="D" value="D"> D</button>
-         <button type="submit" class="primary-button" name="E" value="E"> E</button>
-         <button type="submit" class="primary-button" name="F" value="F"> F</button>
-         <button type="submit" class="primary-button" name="G" value="G"> G</button>
-         <button type="submit" class="primary-button" name="H" value="H"> H</button>
-         <button type="submit" class="primary-button" name="I" value="I"> I</button>
-         <button type="submit" class="primary-button" name="J" value="J"> J</button>
-         <button type="submit" class="primary-button" name="K" value="K"> K</button>
-         <button type="submit" class="primary-button" name="L" value="L"> L</button>
-         <button type="submit" class="primary-button" name="M" value="M"> M</button>
-         <button type="submit" class="primary-button" name="N" value="N"> N</button>
-         <button type="submit" class="primary-button" name="O" value="O"> O</button>
-         <button type="submit" class="primary-button" name="P" value="P"> P</button>
-         <button type="submit" class="primary-button" name="Q" value="Q"> Q</button>
-         <button type="submit" class="primary-button" name="R" value="R"> R</button>
-         <button type="submit" class="primary-button" name="S" value="S"> S</button>
-         <button type="submit" class="primary-button" name="T" value="T"> T</button>
-         <button type="submit" class="primary-button" name="U" value="U"> U</button>
-         <button type="submit" class="primary-button" name="V" value="V"> V</button>
-         <button type="submit" class="primary-button" name="W" value="W"> W</button>
-         <button type="submit" class="primary-button" name="X" value="X"> X</button>
-         <button type="submit" class="primary-button" name="Y" value="Y"> Y</button>
-         <button type="submit" class="primary-button" name="Z" value="Z"> Z</button>
+         <button type="submit" class="jurassic-btn" name="A" value="A"> A </button>
+         <button type="submit" class="jurassic-btn" name="B" value="B"> B </button>
+         <button type="submit" class="jurassic-btn" name="C" value="C"> C</button>
+         <button type="submit" class="jurassic-btn" name="D" value="D"> D</button>
+         <button type="submit" class="jurassic-btn" name="E" value="E"> E</button>
+         <button type="submit" class="jurassic-btn" name="F" value="F"> F</button>
+         <button type="submit" class="jurassic-btn" name="G" value="G"> G</button>
+         <button type="submit" class="jurassic-btn" name="H" value="H"> H</button>
+         <button type="submit" class="jurassic-btn" name="I" value="I"> I</button>
+         <button type="submit" class="jurassic-btn" name="J" value="J"> J</button>
+         <button type="submit" class="jurassic-btn" name="K" value="K"> K</button>
+         <button type="submit" class="jurassic-btn" name="L" value="L"> L</button>
+         <button type="submit" class="jurassic-btn" name="M" value="M"> M</button>
+         <button type="submit" class="jurassic-btn" name="N" value="N"> N</button>
+         <button type="submit" class="jurassic-btn" name="O" value="O"> O</button>
+         <button type="submit" class="jurassic-btn" name="P" value="P"> P</button>
+         <button type="submit" class="jurassic-btn" name="Q" value="Q"> Q</button>
+         <br><br>
+         <button type="submit" class="jurassic-btn" name="R" value="R"> R</button>
+         <button type="submit" class="jurassic-btn" name="S" value="S"> S</button>
+         <button type="submit" class="jurassic-btn" name="T" value="T"> T</button>
+         <button type="submit" class="jurassic-btn" name="U" value="U"> U</button>
+         <button type="submit" class="jurassic-btn" name="V" value="V"> V</button>
+         <button type="submit" class="jurassic-btn" name="W" value="W"> W</button>
+         <button type="submit" class="jurassic-btn" name="X" value="X"> X</button>
+         <button type="submit" class="jurassic-btn" name="Y" value="Y"> Y</button>
+         <button type="submit" class="jurassic-btn" name="Z" value="Z"> Z</button>
         </div>
 
 
    {{end}}
 
    <div class="jurassic">
-      <h3>  {{ .Try }}  </h3>
-      <h3>  {{ .Usingletters }}  </h3>
+      <h5>  &ensp; {{ .Try }}  </h5>
+      <h5>  &ensp; {{ .Usingletters }} &ensp; </h5>
    </div> 
 
    {{if .End}}
       {{else}}
    <form action="/pageJurassic">
-      <button type="submit" class="primary-button" name="giveup" value="giveup"> FF </button>
+      <button type="submit" class="jurassic-btn" name="giveup" value="giveup"> FF </button>
    </form>
    {{end}}
 

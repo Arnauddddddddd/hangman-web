@@ -6,6 +6,12 @@
          <title> HANGMAN </title>
    </head>
 
+   <div class="button-borders">
+      <audio loop="loop" autoplay="autoplay">
+      <source src="../audio/lotr.mp3" vol>
+      </audio>
+   </div>
+
 
    <body>
       <body background="../pictures/bglotr2.jpg"> </body>
@@ -21,59 +27,60 @@
    {{if .End}}
          {{if .Win}}
          <div class="lotr">
-            <h2>  Vous venez de gagner !!!  </h2>
+            <h4>  Vous venez de gagner !!!  </h4>
             <form action="/pageLOTR">
-               <button type="submit" class="fireButton" name="back" value="back"> Menu</button>
+               <button type="submit" class="lotr-btn" name="back" value="back"> Menu</button>
             </form>
          {{else}}
-            <h2>  Vous venez de perdre !!!  </h2>
-            <h2>  Le mot était tout simplement : {{ .Motsecret }} </h2>
+         <div class="lotr">  
+            <h4>  Vous venez de perdre !!!  </h4>
+            <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
             <form action="/pageLOTR">
-               <button type="submit" class="fireButton" name="back" value="back"> Menu</button>
+               <button type="submit" class="lotr-btn" name="back" value="back"> Menu</button>
             </form>
          </div> 
          {{end}}
    {{else}}
       <form action="/pageLOTR">
          <div class="lotr">
-         <button type="submit" class="fireButton" name="A" value="A"> A</button>
-         <button type="submit" class="fireButton" name="B" value="B"> B</button>
-         <button type="submit" class="fireButton" name="C" value="C"> C</button>
-         <button type="submit" class="fireButton" name="D" value="D"> D</button>
-         <button type="submit" class="fireButton" name="E" value="E"> E</button>
-         <button type="submit" class="fireButton" name="F" value="F"> F</button>
-         <button type="submit" class="fireButton" name="G" value="G"> G</button>
-         <button type="submit" class="fireButton" name="H" value="H"> H</button>
-         <button type="submit" class="fireButton" name="I" value="I"> I</button>
-         <button type="submit" class="fireButton" name="J" value="J"> J</button>
-         <button type="submit" class="fireButton" name="K" value="K"> K</button>
-         <button type="submit" class="fireButton" name="L" value="L"> L</button>
-         <button type="submit" class="fireButton" name="M" value="M"> M</button>
-         <button type="submit" class="fireButton" name="N" value="N"> N</button>
-         <button type="submit" class="fireButton" name="O" value="O"> O</button>
-         <button type="submit" class="fireButton" name="P" value="P"> P</button>
-         <button type="submit" class="fireButton" name="Q" value="Q"> Q</button>
-         <button type="submit" class="fireButton" name="R" value="R"> R</button>
-         <button type="submit" class="fireButton" name="S" value="S"> S</button>
-         <button type="submit" class="fireButton" name="T" value="T"> T</button>
-         <button type="submit" class="fireButton" name="U" value="U"> U</button>
-         <button type="submit" class="fireButton" name="V" value="V"> V</button>
-         <button type="submit" class="fireButton" name="W" value="W"> W</button>
-         <button type="submit" class="fireButton" name="X" value="X"> X</button>
-         <button type="submit" class="fireButton" name="Y" value="Y"> Y</button>
-         <button type="submit" class="fireButton" name="Z" value="Z"> Z</button>
+         <button type="submit" class="lotr-btn" name="A" value="A"> A</button>
+         <button type="submit" class="lotr-btn" name="B" value="B"> B</button>
+         <button type="submit" class="lotr-btn" name="C" value="C"> C</button>
+         <button type="submit" class="lotr-btn" name="D" value="D"> D</button>
+         <button type="submit" class="lotr-btn" name="E" value="E"> E</button>
+         <button type="submit" class="lotr-btn" name="F" value="F"> F</button>
+         <button type="submit" class="lotr-btn" name="G" value="G"> G</button>
+         <button type="submit" class="lotr-btn" name="H" value="H"> H</button>
+         <button type="submit" class="lotr-btn" name="I" value="I"> I</button>
+         <button type="submit" class="lotr-btn" name="J" value="J"> J</button>
+         <button type="submit" class="lotr-btn" name="K" value="K"> K</button>
+         <button type="submit" class="lotr-btn" name="L" value="L"> L</button>
+         <button type="submit" class="lotr-btn" name="M" value="M"> M</button>
+         <button type="submit" class="lotr-btn" name="N" value="N"> N</button>
+         <button type="submit" class="lotr-btn" name="O" value="O"> O</button>
+         <button type="submit" class="lotr-btn" name="P" value="P"> P</button>
+         <button type="submit" class="lotr-btn" name="Q" value="Q"> Q</button>
+         <button type="submit" class="lotr-btn" name="R" value="R"> R</button>
+         <button type="submit" class="lotr-btn" name="S" value="S"> S</button>
+         <button type="submit" class="lotr-btn" name="T" value="T"> T</button>
+         <button type="submit" class="lotr-btn" name="U" value="U"> U</button>
+         <button type="submit" class="lotr-btn" name="V" value="V"> V</button>
+         <button type="submit" class="lotr-btn" name="W" value="W"> W</button>
+         <button type="submit" class="lotr-btn" name="X" value="X"> X</button>
+         <button type="submit" class="lotr-btn" name="Y" value="Y"> Y</button>
+         <button type="submit" class="lotr-btn" name="Z" value="Z"> Z</button>
          </div> 
    {{end}}
 
    <div class="lotr">
       <h3>  {{ .Try }}  </h3>
-      <h3>  {{ .Usingletters }}  </h3>
+      <h3>  &ensp; {{ .Usingletters }} &ensp; </h3>
    </div> 
 
    {{if .End}}
       {{else}}
    <form action="/pageLOTR">
-      <button type="submit" class="fireButton" name="giveup" value="giveup"> FF</button>
+      <button type="submit" class="lotr-btn" name="giveup" value="giveup"> FF</button>
    </form>
    {{end}}
 

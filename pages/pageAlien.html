@@ -6,6 +6,12 @@
          <title> HANGMAN </title>
    </head>
 
+   <div class="button-borders">
+      <audio loop="loop" autoplay="autoplay">
+      <source src="../audio/alien.mp3" vol>
+      </audio>
+   </div>
+
 
    <body>
       <body background="../pictures/alien3.png"> </body>
@@ -26,8 +32,8 @@
          </div>
          {{else}}
            <div class="alien-title">
-            <h2>  Vous venez de perdre !!!  </h2>
-            <h2>  Le mot était tout simplement : {{ .Motsecret }} </h2>
+            <h4>  Vous venez de perdre !!!  </h4>
+            <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
             <form action="/pageAlien">
                <button type="submit" class="btn-alien" name="back" value="back"> Menu</button>
             </form>
@@ -66,7 +72,7 @@
 
    <div class="alien-title"> 
       <h4>  {{ .Try }}  </h4>
-      <h4>  {{ .Usingletters }}  </h4>
+      <h4>  &ensp; {{ .Usingletters }}  &ensp; </h4>
 
       {{if .End}}
       {{else}}

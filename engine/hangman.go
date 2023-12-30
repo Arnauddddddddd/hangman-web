@@ -1,7 +1,5 @@
 package engine
 
-import "fmt"
-
 func (g *Structure) verif(letter rune) bool {
 	for _, i := range(g.letterTest) {
 		if rune(i[0]) == letter {
@@ -47,7 +45,6 @@ func (g *Structure) defWord(movie int) {
 func (g *Structure) verifWin() {
 	list := []rune(g.mot_cachee)
 	list2 := []rune(g.mot_secret)
-	fmt.Println(list, list2)
 	for i := 0; i < len(g.mot_secret); i++ {
 		if list[i*2] != list2[i] {
 			return
