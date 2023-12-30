@@ -29,13 +29,13 @@
          <div class="jurassic">
             <h2>  Vous venez de gagner !!!  </h2>
             <form action="/pageJurassic">
-               <button type="submit" class="primary-button" name="back" value="back"> Retour au menu</button>
+               <button type="submit" class="primary-button" name="back" value="back"> Menu</button>
             </form>
          {{else}}
             <h2>  Vous venez de perdre !!!  </h2>
             <h2>  Le mot était tout simplement : {{ .Motsecret }} </h2>
             <form action="/pageJurassic">
-               <button type="submit" class="primary-button" name="back" value="back"> Retour au menu</button>
+               <button type="submit" class="primary-button" name="back" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
@@ -82,6 +82,13 @@
       <h3>  {{ .Try }}  </h3>
       <h3>  {{ .Usingletters }}  </h3>
    </div> 
+
+   {{if .End}}
+      {{else}}
+   <form action="/pageJurassic">
+      <button type="submit" class="primary-button" name="giveup" value="giveup"> FF </button>
+   </form>
+   {{end}}
 
 
    </body>

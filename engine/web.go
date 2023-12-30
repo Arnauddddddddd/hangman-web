@@ -38,37 +38,38 @@ func(g *Structure) index(w http.ResponseWriter, r *http.Request) {
 }
 
 func(g *Structure) pageTitanic(w http.ResponseWriter, r *http.Request) {
-	g.defWord("titanic")
+	g.defWord(1)
 	r.ParseForm()
 	g.pageHangman(w, r, 1)
+	
 }
 
 func(g *Structure) pageAlien(w http.ResponseWriter, r *http.Request) {
-	g.defWord("alien")
+	g.defWord(2)
 	r.ParseForm()
 	g.pageHangman(w, r, 2)
 }
 
 func(g *Structure) pageLOTR(w http.ResponseWriter, r *http.Request) {
-	g.defWord("lotr")
+	g.defWord(3)
 	r.ParseForm()
 	g.pageHangman(w, r, 3)
 }
 
 func(g *Structure) pageFightclub(w http.ResponseWriter, r *http.Request) {
-	g.defWord("fightclub")
+	g.defWord(4)
 	r.ParseForm()
 	g.pageHangman(w, r, 4)
 }
 
 func(g *Structure) pageJurassic(w http.ResponseWriter, r *http.Request) {
-	g.defWord("jurassic")
+	g.defWord(5)
 	r.ParseForm()
 	g.pageHangman(w, r, 5)
 }
 
 func(g *Structure) pageSpiderman(w http.ResponseWriter, r *http.Request) {
-	g.defWord("spiderman")
+	g.defWord(6)
 	r.ParseForm()
 	g.pageHangman(w, r, 6)
 }
@@ -79,9 +80,12 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 	A, B, C, D, E, F, G :=  r.Form.Get("A"), r.Form.Get("B"), r.Form.Get("C"), r.Form.Get("D"), r.Form.Get("E"), r.Form.Get("F"), r.Form.Get("G")
 	H, I, J, K, L, M, N :=  r.Form.Get("H"), r.Form.Get("I"), r.Form.Get("J"), r.Form.Get("K"), r.Form.Get("L"), r.Form.Get("M"), r.Form.Get("N")
 	O, P, Q, R, S, T, U :=  r.Form.Get("O"), r.Form.Get("P"), r.Form.Get("Q"), r.Form.Get("R"), r.Form.Get("S"), r.Form.Get("T"), r.Form.Get("U")
-	V, W, X, Y, Z :=        r.Form.Get("V"), r.Form.Get("W"), r.Form.Get("X"), r.Form.Get("Y"), r.Form.Get("Z")
-	g.currentLetter = A+B+C+D+E+F+G+H+I+J+K+L+M+N+O+P+Q+R+S+T+U+V+W+X+Y+Z
+	V, W, X, Y, Z, giveup, menu := r.Form.Get("V"), r.Form.Get("W"), r.Form.Get("X"), r.Form.Get("Y"), r.Form.Get("Z"), r.Form.Get("giveup"), r.Form.Get("back")
+	g.currentLetter = A+B+C+D+E+F+G+H+I+J+K+L+M+N+O+P+Q+R+S+T+U+V+W+X+Y+Z+giveup+menu
 	if len(g.currentLetter) > 0 {
+		if g.currentLetter == "giveup" {
+			g.end = true
+		}
 		if g.verif(rune(g.currentLetter[0])) {
 			g.usingLetters += "  " + string(g.currentLetter[0])
 			g.letterTest = append(g.letterTest, string(g.currentLetter[0]))
@@ -93,9 +97,7 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 		g.end = true
 	}
 	if g.end {
-		back := r.Form.Get("back")
-		g.reset_button = back
-		if len(g.reset_button) > 0 {
+		if g.currentLetter == "back" {
 			g.init()
 			g.index(w, r)
 			return

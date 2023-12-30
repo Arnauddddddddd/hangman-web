@@ -32,20 +32,10 @@ func  (g *Structure) inWord(letter rune) {
 }
 
 
-func (g *Structure) defWord(movie string) {
-	if movie == "alien" {
-		g.mot_secret = g.mot_alien
-	} else if movie == "titanic" {
-		g.mot_secret = g.mot_titanic
-	} else if movie == "lotr" {
-		g.mot_secret = g.mot_lotr
-	} else if movie == "fightclub" {
-		g.mot_secret = g.mot_fc
-	} else if movie == "jurassic" {
-		g.mot_secret = g.mot_jurassic
-	} else if movie == "spiderman" {
-		g.mot_secret = g.mot_spiderman
-	}
+func (g *Structure) defWord(movie int) {
+	listMovies := []string{g.mot_titanic, g.mot_alien ,g.mot_lotr, g.mot_fc,  g.mot_jurassic, g.mot_spiderman}
+	g.mot_secret = listMovies[movie-1]
+	
 	if len(g.mot_cachee) < len(g.mot_secret)*2 {
 		for i := 0; i < len(g.mot_secret); i++ {
 			g.mot_cachee += "_ "

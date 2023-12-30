@@ -14,22 +14,26 @@
          <h2>  HANGMAN : FIGHT CLUB  </h2>
       </div>
 
-      <audio loop="loop" autoplay="autoplay">
+      <div class="button-borders">
+         <audio loop="loop" autoplay="autoplay">
          <source src="../audio/fightclub.mp3" vol>
-      </audio>
+         </audio>
+      </div>
+
+
 
    {{if .End}}
          {{if .Win}}
          <div class="fight-club-title">  
             <h2>  Vous venez de gagner !!!  </h2>
             <form action="/pageFightclub">
-               <button type="submit" class="glowing-btn" name="back" value="back"> Retour au menu</button>
+               <button type="submit" class="glowing-btn" name="back" value="back"> Menu</button>
             </form>
          {{else}}
             <h2>  Vous venez de perdre !!!  </h2>
             <h2>  Le mot était tout simplement : {{ .Motsecret }} </h2>
             <form action="/pageFightclub">
-               <button type="submit" class="glowing-btn" name="back" value="back"> Retour au menu</button>
+               <button type="submit" class="glowing-btn" name="back" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
@@ -91,6 +95,13 @@
       <h3>  {{ .Try }}  </h3>
       <h3>  {{ .Usingletters }}  </h3>
    </div>
+
+   {{if .End}}
+   {{else}}
+   <form action="/pageFightclub">
+      <button type="submit" class="glowing-btn" name="giveup" value="giveup"> FF </button>
+   </form>
+   {{end}}
 
    </body>
 </html>
