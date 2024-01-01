@@ -29,7 +29,7 @@
          <div class="jurassic">
             <h3>  Vous venez de gagner !!!  </h3>
             <form action="/pageJurassic">
-               <button type="submit" class="jurassic-btn" name="back" value="back"> Menu</button>
+               <button type="submit" class="jurassic-btn" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{else}}
@@ -37,7 +37,7 @@
             <h4>  Vous venez de perdre !!!  </h4>
             <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
             <form action="/pageJurassic">
-               <button type="submit" class="jurassic-btn" name="back" value="back"> Menu</button>
+               <button type="submit" class="jurassic-btn" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
@@ -89,7 +89,7 @@
    {{if .End}}
       {{else}}
    <form action="/pageJurassic">
-      <button type="submit" class="jurassic-btn" name="giveup" value="giveup"> FF </button>
+      <button type="submit" class="jurassic-btn" name="letter" value="giveup"> FF </button>
    </form>
    {{end}}
 

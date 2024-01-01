@@ -27,14 +27,14 @@
          <div class="fight-club-title">  
             <h2>  Vous venez de gagner !!!  </h2>
             <form action="/pageFightclub">
-               <button type="submit" class="fightclub-btn" name="back" value="back"> Menu</button>
+               <button type="submit" class="fightclub-btn" name="letter" value="back"> Menu</button>
             </form>
          {{else}}
          <div class="fight-club-title">  
             <h5>  Vous venez de perdre !!!  </h5>
             <h5>  Le mot etait tout simplement : {{ .Motsecret }} </h5>
             <form action="/pageFightclub">
-               <button type="submit" class="fightclub-btn" name="back" value="back"> Menu</button>
+               <button type="submit" class="fightclub-btn" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
@@ -67,7 +67,7 @@
          <div class="fight-club-title">  
             <h3>  {{ .Motcachee }}  &ensp; </h3>
          </div>
-         
+
          <div> 
          <button type="submit" class="fightclub-btn" name="letter" value="O"> O</button>
          <button type="submit" class="fightclub-btn" name="letter" value="P"> P</button>
@@ -98,7 +98,7 @@
    {{if .End}}
    {{else}}
    <form action="/pageFightclub">
-      <button type="submit" class="fightclub-btn" name="giveup" value="giveup"> FF </button>
+      <button type="submit" class="fightclub-btn" name="letter" value="giveup"> FF </button>
    </form>
    {{end}}
 

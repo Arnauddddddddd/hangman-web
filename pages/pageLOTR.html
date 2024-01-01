@@ -29,14 +29,14 @@
          <div class="lotr">
             <h4>  Vous venez de gagner !!!  </h4>
             <form action="/pageLOTR">
-               <button type="submit" class="lotr-btn" name="back" value="back"> Menu</button>
+               <button type="submit" class="lotr-btn" name="letter" value="back"> Menu</button>
             </form>
          {{else}}
          <div class="lotr">  
             <h4>  Vous venez de perdre !!!  </h4>
             <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
             <form action="/pageLOTR">
-               <button type="submit" class="lotr-btn" name="back" value="back"> Menu</button>
+               <button type="submit" class="lotr-btn" name="letter" value="back"> Menu</button>
             </form>
          </div> 
          {{end}}
@@ -80,7 +80,7 @@
    {{if .End}}
       {{else}}
    <form action="/pageLOTR">
-      <button type="submit" class="lotr-btn" name="giveup" value="giveup"> FF</button>
+      <button type="submit" class="lotr-btn" name="letter" value="giveup"> FF</button>
    </form>
    {{end}}
 

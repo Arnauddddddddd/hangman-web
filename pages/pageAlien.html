@@ -27,7 +27,7 @@
          <div class="alien-title">
             <h2>  Vous venez de gagner !!!  </h2>
             <form action="/pageAlien">
-               <button type="submit" class="btn-alien" name="back" value="back"> Menu</button>
+               <button type="submit" class="btn-alien" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{else}}
@@ -35,7 +35,7 @@
             <h4>  Vous venez de perdre !!!  </h4>
             <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
             <form action="/pageAlien">
-               <button type="submit" class="btn-alien" name="back" value="back"> Menu</button>
+               <button type="submit" class="btn-alien" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
@@ -77,7 +77,7 @@
       {{if .End}}
       {{else}}
       <form action="/pageAlien">
-         <button type="submit" class="btn-alien" name="giveup" value="giveup"> FF </button>
+         <button type="submit" class="btn-alien" name="letter" value="giveup"> FF </button>
       </form>
       {{end}}
    </div> 
