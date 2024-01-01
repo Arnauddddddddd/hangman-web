@@ -72,12 +72,10 @@ func(g *Structure) pageSpiderman(w http.ResponseWriter, r *http.Request) {
 func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice int) {
 	r.ParseForm()
 	tmpl := template.Must(template.ParseFiles(g.list_web_page[indice]))
-	A, B, C, D, E, F, G :=  r.Form.Get("A"), r.Form.Get("B"), r.Form.Get("C"), r.Form.Get("D"), r.Form.Get("E"), r.Form.Get("F"), r.Form.Get("G")
-	H, I, J, K, L, M, N :=  r.Form.Get("H"), r.Form.Get("I"), r.Form.Get("J"), r.Form.Get("K"), r.Form.Get("L"), r.Form.Get("M"), r.Form.Get("N")
-	O, P, Q, R, S, T, U :=  r.Form.Get("O"), r.Form.Get("P"), r.Form.Get("Q"), r.Form.Get("R"), r.Form.Get("S"), r.Form.Get("T"), r.Form.Get("U")
-	V, W, X, Y, Z :=        r.Form.Get("V"), r.Form.Get("W"), r.Form.Get("X"), r.Form.Get("Y"), r.Form.Get("Z")
+	
+	letter := r.Form.Get("letter")
 	giveup, menu := r.Form.Get("giveup"), r.Form.Get("back")
-	g.currentLetter = A+B+C+D+E+F+G+H+I+J+K+L+M+N+O+P+Q+R+S+T+U+V+W+X+Y+Z+giveup+menu
+	g.currentLetter = letter + giveup + menu
 
 	if len(g.currentLetter) > 0 {
 		if g.currentLetter == "giveup" {
