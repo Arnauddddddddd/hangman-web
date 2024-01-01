@@ -72,11 +72,10 @@ func(g *Structure) pageSpiderman(w http.ResponseWriter, r *http.Request) {
 func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice int) {
 	r.ParseForm()
 	tmpl := template.Must(template.ParseFiles(g.list_web_page[indice]))
-	
 	letter := r.Form.Get("letter")
 	giveup, menu := r.Form.Get("giveup"), r.Form.Get("back")
 	g.currentLetter = letter + giveup + menu
-
+	
 	if len(g.currentLetter) > 0 {
 		if g.currentLetter == "giveup" {
 			g.end = true
