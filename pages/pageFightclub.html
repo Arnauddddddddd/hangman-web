@@ -27,14 +27,13 @@
          <div class="fight-club-title">  
             <h2>  Vous venez de gagner !!!  </h2>
             <form action="/pageFightclub">
-               <button type="submit" class="fightclub-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
             </form>
          {{else}}
          <div class="fight-club-title">  
-            <h5>  Vous venez de perdre !!!  </h5>
             <h5>  Le mot etait tout simplement : {{ .Motsecret }} </h5>
             <form action="/pageFightclub">
-               <button type="submit" class="fightclub-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
@@ -91,14 +90,14 @@
    {{end}}
 
    <div class="fight-club-title">  
-      <h6>  {{ .Try }}  </h6>
+      <h6>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h6>
       <h6>  &ensp; {{ .Usingletters }}  &ensp; </h6>
    </div>
 
    {{if .End}}
    {{else}}
    <form action="/pageFightclub">
-      <button type="submit" class="fightclub-btn" name="letter" value="giveup"> FF </button>
+      <button type="submit" class="menu-btn" name="letter" value="giveup"> FF </button>
    </form>
    {{end}}
 

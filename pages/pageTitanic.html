@@ -27,15 +27,14 @@
          <div class="titanic-title">
             <h3>  Vous venez de gagner !!!  </h3>
             <form action="/pageTitanic">
-               <button type="submit" class="titanic-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{else}}
          <div class="titanic-title">
-            <h3>  Vous venez de perdre !!!  </h3>
             <h3>  Le mot etait tout simplement : {{ .Motsecret }} </h3>
             <form action="/pageTitanic">
-               <button type="submit" class="titanic-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
@@ -104,14 +103,14 @@
    {{end}}
 
    <div class="titanic-title">
-      <h3>  {{ .Try }}  </h3>
+      <h3>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h3>
       <h3>  &ensp; {{ .Usingletters }} &ensp; </h3>
    </div> 
 
    {{if .End}}
       {{else}}
    <form action="/pageTitanic">
-      <button type="submit" class="custom-btn btn-2" name="letter" value="giveup"> FF </button>
+      <button type="submit" class="menu-btn" name="letter" value="giveup"> FF </button>
    </form>
    {{end}}
 

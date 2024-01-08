@@ -20,6 +20,8 @@ func(g *Structure) web() {
 	http.HandleFunc("/", g.index)
 	http.Handle("/steady/", http.StripPrefix("/steady/", http.FileServer(http.Dir("steady"))))
 	http.Handle("/pictures/", http.StripPrefix("/pictures/", http.FileServer(http.Dir("pictures"))))
+	http.Handle("/hangman/", http.StripPrefix("/hangman/", http.FileServer(http.Dir("hangman"))))
+	http.Handle("/javascript/", http.StripPrefix("/javascript/", http.FileServer(http.Dir("javascript"))))
 	http.Handle("/police/", http.StripPrefix("/police/", http.FileServer(http.Dir("police"))))
 	http.Handle("/audio/", http.StripPrefix("/audio/", http.FileServer(http.Dir("audio"))))
 	http.HandleFunc("/pageTitanic", g.pageTitanic)

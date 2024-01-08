@@ -30,15 +30,14 @@
          <div class="spiderman">
             <h3>  Vous venez de gagner !!!  </h3>
             <form action="/pageSpiderman">
-               <button type="submit" class="jurassic-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{else}}
             <div class="spiderman">
-            <h3>  Vous venez de perdre !!!  </h3>
             <h3>  Le mot etait tout simplement : {{ .Motsecret }} </h3>
             <form action="/pageSpiderman">
-               <button type="submit" class="jurassic-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
@@ -83,14 +82,14 @@
    
 
    <div class="spiderman">
-      <h3>  {{ .Try }}  </h3>
+      <h3>  <img src="../hangman/hang{{ .Try }}.PNG" height="30%" width="15%">  </h3>
       <h3> &ensp;  {{ .Usingletters }} &ensp; </h3>
    </div> 
 
    {{if .End}}
       {{else}}
    <form action="/pageSpiderman">
-      <button type="submit" class="jurassic-btn" name="letter" value="giveup"> FF </button>
+      <button type="submit" class="menu-btn" name="letter" value="giveup"> FF </button>
    </form>
    {{end}}
 

@@ -73,8 +73,8 @@ body {
   font-family: 'Jurassic', sans-serif;
   color: rgb(255, 0, 0);
   font-size: 60px;
-  font-weight: 10000000;
-  -webkit-text-stroke-width: 3px;
+  font-weight: 1;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgba(209, 209, 209, 0.993)
 }
 
@@ -82,7 +82,7 @@ body {
   font-family: 'Jurassic', sans-serif;
   color: rgb(255, 0, 0);
   font-size: 60px;
-  font-weight: 10000000;
+  font-weight: 1;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: rgba(209, 209, 209, 0.993)
 }
@@ -384,6 +384,28 @@ button {
       0 -35px 40px 30px rgba(255, 130, 10, 0),
       0 -30px 30px 10px rgba(230, 30, 10, 0),
       0 -20px 10px 0 rgba(255, 255, 10, 0);
+  }
+}
+
+.menu-btn {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 3px;
+  color: #fff;
+  background: #000;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 10px;
+  padding: 12px 10px;
+  text-align:center;
+  transition-duration: .15s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  &:hover{
+      color: #000;
+      background: rgb(255, 218, 87);
   }
 }
 

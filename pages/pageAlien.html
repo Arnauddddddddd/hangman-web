@@ -4,16 +4,17 @@
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="../steady/style.css"> 
          <title> HANGMAN </title>
+         <script type="text/javascript" src="../javascript/fullajax.js"></script>
    </head>
 
-   <div class="button-borders">
-      <audio loop="loop" autoplay="autoplay">
-      <source src="../audio/alien.mp3" vol>
-      </audio>
-   </div>
-
-
    <body>
+
+      <script type="text/javascript">
+         playsound("../audio/alien.mp3", 100000)
+
+      </script>
+
+      
       <body background="../pictures/alien3.png"> </body>
       <h1>   <title>  HANGMAN </title>   </h1>
       <div class="alien-title"> <h1>   HANGMAN : ALIEN   </h1>  </div> 
@@ -22,24 +23,25 @@
          <h2>  {{ .Motcachee }}  </h2>
       </div> 
 
+
    {{if .End}}
          {{if .Win}}
          <div class="alien-title">
             <h2>  Vous venez de gagner !!!  </h2>
             <form action="/pageAlien">
-               <button type="submit" class="btn-alien" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{else}}
            <div class="alien-title">
-            <h4>  Vous venez de perdre !!!  </h4>
             <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
             <form action="/pageAlien">
-               <button type="submit" class="btn-alien" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
             </form>
          </div>
          {{end}}
    {{else}}
+      
       <form action="/pageAlien">
          <button type="submit" class="btn-alien" name="letter" value="A"> A</button>
          <button type="submit" class="btn-alien" name="letter" value="B"> B</button>
@@ -68,16 +70,17 @@
          <button type="submit" class="btn-alien" name="letter" value="X"> X</button>
          <button type="submit" class="btn-alien" name="letter" value="Y"> Y</button>
          <button type="submit" class="btn-alien" name="letter" value="Z"> Z</button>
+   </form>
    {{end}}
 
    <div class="alien-title"> 
-      <h4>  {{ .Try }}  </h4>
+      <h4>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">   </h4>
       <h4>  &ensp; {{ .Usingletters }}  &ensp; </h4>
 
       {{if .End}}
       {{else}}
       <form action="/pageAlien">
-         <button type="submit" class="btn-alien" name="letter" value="giveup"> FF </button>
+         <button type="submit" class="menu-btn" name="letter" value="giveup"> FF </button>
       </form>
       {{end}}
    </div> 

@@ -29,14 +29,13 @@
          <div class="lotr">
             <h4>  Vous venez de gagner !!!  </h4>
             <form action="/pageLOTR">
-               <button type="submit" class="lotr-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
             </form>
          {{else}}
          <div class="lotr">  
-            <h4>  Vous venez de perdre !!!  </h4>
             <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
             <form action="/pageLOTR">
-               <button type="submit" class="lotr-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
             </form>
          </div> 
          {{end}}
@@ -73,14 +72,14 @@
    {{end}}
 
    <div class="lotr">
-      <h3>  {{ .Try }}  </h3>
+      <h3>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h3>
       <h3>  &ensp; {{ .Usingletters }} &ensp; </h3>
    </div> 
 
    {{if .End}}
       {{else}}
    <form action="/pageLOTR">
-      <button type="submit" class="lotr-btn" name="letter" value="giveup"> FF</button>
+      <button type="submit" class="menu-btn" name="letter" value="giveup"> FF</button>
    </form>
    {{end}}
 
