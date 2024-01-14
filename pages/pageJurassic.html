@@ -14,11 +14,6 @@
          <h1>   HANGMAN  JURASSIC PARK  </h1>
       </div>
 
-      <div class="button-borders">
-         <audio loop="loop" autoplay="autoplay">
-         <source src="../audio/jurassic.mp3" vol>
-         </audio>
-      </div>
 
       <div class="jurassic">
          <h3>  &ensp; {{ .Motcachee }}  </h3>
@@ -29,14 +24,26 @@
          <div class="jurassic">
             <h3>  Vous venez de gagner !!!  </h3>
             <form action="/pageJurassic">
-               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
+               <script>
+                  var submit = document.getElementsByTagName('button')[0];
+                  submit.onclick = function() {
+                     setInterval(function(){window.close()},3);
+                  }
+               </script> 
             </form>
          </div>
          {{else}}
          <div class="jurassic">  
             <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
             <form action="/pageJurassic">
-               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
+               <script>
+                  var submit = document.getElementsByTagName('button')[0];
+                  submit.onclick = function() {
+                     setInterval(function(){window.close()},3);
+                  }
+               </script> 
             </form>
          </div>
          {{end}}

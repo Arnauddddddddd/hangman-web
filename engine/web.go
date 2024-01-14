@@ -24,6 +24,7 @@ func(g *Structure) web() {
 	http.Handle("/javascript/", http.StripPrefix("/javascript/", http.FileServer(http.Dir("javascript"))))
 	http.Handle("/police/", http.StripPrefix("/police/", http.FileServer(http.Dir("police"))))
 	http.Handle("/audio/", http.StripPrefix("/audio/", http.FileServer(http.Dir("audio"))))
+	http.HandleFunc("/index", g.index)
 	http.HandleFunc("/pageTitanic", g.pageTitanic)
 	http.HandleFunc("/pageAlien", g.pageAlien)
 	http.HandleFunc("/pageLOTR", g.pageLOTR)
@@ -94,7 +95,6 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 		if g.currentLetter == "back" {
 			g.init()
 			g.index(w, r)
-			return
 		}
 	}
 

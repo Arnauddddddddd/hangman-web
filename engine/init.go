@@ -1,7 +1,6 @@
 package engine
 
 import (
-	"fmt"
 	"math/rand"
 	"time"
 )
@@ -32,7 +31,6 @@ func (g *Structure) init() {
 
 	s := rand.NewSource(time.Now().Unix())
 	r := rand.New(s)
-	fmt.Println(len(g.listWordsAlien), len(g.listWordsTitanic))
 	g.mot_titanic = g.listWordsTitanic[r.Intn(len(g.listWordsTitanic))]
 	g.mot_alien = g.listWordsAlien[r.Intn(len(g.listWordsTitanic))]
 	g.mot_lotr = g.listWordsLotr[r.Intn(len(g.listWordsTitanic))]

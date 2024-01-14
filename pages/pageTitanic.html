@@ -6,13 +6,6 @@
          <title> HANGMAN </title>
    </head>
 
-   <div class="button-borders">
-      <audio loop="loop" autoplay="autoplay">
-      <source src="../audio/titanic.mp3" vol>
-      </audio>
-   </div>
-
-
    <body>
       <body background="../pictures/titanicccccc.jpg"> </body>
 
@@ -27,14 +20,26 @@
          <div class="titanic-title">
             <h3>  Vous venez de gagner !!!  </h3>
             <form action="/pageTitanic">
-               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
+               <script>
+                  var submit = document.getElementsByTagName('button')[0];
+                  submit.onclick = function() {
+                     setInterval(function(){window.close()},3);
+                  }
+               </script> 
             </form>
          </div>
          {{else}}
          <div class="titanic-title">
             <h3>  Le mot etait tout simplement : {{ .Motsecret }} </h3>
             <form action="/pageTitanic">
-               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
+               <script>
+                  var submit = document.getElementsByTagName('button')[0];
+                  submit.onclick = function() {
+                     setInterval(function(){window.close()},3);
+                  }
+               </script> 
             </form>
          </div>
          {{end}}

@@ -8,12 +8,6 @@
    </head>
 
    <body>
-
-      <script type="text/javascript">
-         playsound("../audio/alien.mp3", 100000)
-
-      </script>
-
       
       <body background="../pictures/alien3.png"> </body>
       <h1>   <title>  HANGMAN </title>   </h1>
@@ -23,20 +17,32 @@
          <h2>  {{ .Motcachee }}  </h2>
       </div> 
 
-
+     
    {{if .End}}
          {{if .Win}}
          <div class="alien-title">
             <h2>  Vous venez de gagner !!!  </h2>
             <form action="/pageAlien">
-               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
+               <script>
+                  var submit = document.getElementsByTagName('button')[0];
+                  submit.onclick = function() {
+                     setInterval(function(){window.close()},3);
+                  }
+               </script> 
             </form>
          </div>
          {{else}}
            <div class="alien-title">
             <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
             <form action="/pageAlien">
-               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
+               <script>
+                  var submit = document.getElementsByTagName('button')[0];
+                  submit.onclick = function() {
+                     setInterval(function(){window.close()},3);
+                  }
+               </script> 
             </form>
          </div>
          {{end}}

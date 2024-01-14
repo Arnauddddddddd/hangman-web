@@ -6,13 +6,6 @@
          <title> HANGMAN </title>
    </head>
 
-   <div class="button-borders">
-      <audio loop="loop" autoplay="autoplay">
-      <source src="../audio/lotr.mp3" vol>
-      </audio>
-   </div>
-
-
    <body>
       <body background="../pictures/bglotr2.jpg"> </body>
       <img src="../pictures/lotrtext.png" height="10%" width="60%">
@@ -29,13 +22,24 @@
          <div class="lotr">
             <h4>  Vous venez de gagner !!!  </h4>
             <form action="/pageLOTR">
-               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
-            </form>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
+               <script>
+                  var submit = document.getElementsByTagName('button')[0];
+                  submit.onclick = function() {
+                     setInterval(function(){window.close()},3);
+                  }
+               </script> 
          {{else}}
          <div class="lotr">  
             <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
             <form action="/pageLOTR">
-               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
+               <script>
+                  var submit = document.getElementsByTagName('button')[0];
+                  submit.onclick = function() {
+                     setInterval(function(){window.close()},3);
+                  }
+               </script> 
             </form>
          </div> 
          {{end}}

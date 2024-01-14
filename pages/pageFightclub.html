@@ -4,6 +4,7 @@
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="../steady/style.css"> 
          <title> HANGMAN </title>
+         <script src="../javascript/script.js"></script>
    </head>
 
 
@@ -14,26 +15,30 @@
          <h2>  HANGMAN : FIGHT CLUB  </h2>
       </div>
 
-      <div class="button-borders">
-         <audio loop="loop" autoplay="autoplay">
-         <source src="../audio/fightclub.mp3" vol>
-         </audio>
-      </div>
-
-
-
    {{if .End}}
          {{if .Win}}
          <div class="fight-club-title">  
             <h2>  Vous venez de gagner !!!  </h2>
             <form action="/pageFightclub">
-               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
+               <script>
+                  var submit = document.getElementsByTagName('button')[0];
+                  submit.onclick = function() {
+                     setInterval(function(){window.close()},3);
+                  }
+               </script> 
             </form>
          {{else}}
          <div class="fight-club-title">  
             <h5>  Le mot etait tout simplement : {{ .Motsecret }} </h5>
             <form action="/pageFightclub">
-               <button type="submit" class="menu-btn" name="letter" value="back"> Menu</button>
+               <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
+               <script>
+                  var submit = document.getElementsByTagName('button')[0];
+                  submit.onclick = function() {
+                     setInterval(function(){window.close()},3);
+                  }
+               </script> 
             </form>
          </div>
          {{end}}
