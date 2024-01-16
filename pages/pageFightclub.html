@@ -8,7 +8,7 @@
    </head>
 
 
-   <body>
+   <body> <!--initialise le fond d'ecran du film FightClub-->
       <body background="../pictures/fightclubBG.jpg"> </body>
 
       <div class="fight-club-title">  
@@ -17,8 +17,8 @@
 
    {{if .End}}
          {{if .Win}}
-         <div class="fight-club-title">  
-            <h2>  Vous venez de gagner !!!  </h2>
+         <div class="fight-club-title">
+            <h2>  Vous venez de gagner !!!  </h2> <!--affiche le fait qu'on a gagné la partie-->
             <form action="/pageFightclub">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
@@ -29,8 +29,8 @@
                </script> 
             </form>
          {{else}}
-         <div class="fight-club-title">  
-            <h5>  Le mot etait tout simplement : {{ .Motsecret }} </h5>
+         <div class="fight-club-title"> <!--applique le style d'écriture FightClub dans le texte ci-dessous-->
+            <h5>  Le mot etait tout simplement : {{ .Motsecret }} </h5> <!-- affiche le mot secret si on a perdu ou si on a FF-->
             <form action="/pageFightclub">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
@@ -50,7 +50,7 @@
          
             
 
-         <div>
+         <div> <!--affiche l'alphabet pour choisir la lettre qu'on veut utiliser dans le style FightClub-->
             <button type="submit" class="fightclub-btn" name="letter" value="A"> A</button>
             <button type="submit" class="fightclub-btn" name="letter" value="B"> B</button>
             <button type="submit" class="fightclub-btn" name="letter" value="C"> C</button>
@@ -94,8 +94,8 @@
       
    {{end}}
 
-   <div class="fight-club-title">  
-      <h6>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h6>
+   <div class="fight-club-title"> <!--affiche le titre Alien-->  
+      <h6>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h6> <!--initialise la taille du fond d'écran-->
       <h6>  &ensp; {{ .Usingletters }}  &ensp; </h6>
    </div>
 
