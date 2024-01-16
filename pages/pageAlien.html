@@ -8,39 +8,39 @@
    </head>
 
    <body>
-      
+      <!--initialise le fond d'écran du film Alien-->
       <body background="../pictures/alien3.png"> </body>
       <h1>   <title>  HANGMAN </title>   </h1>
       <div class="alien-title"> <h1>   HANGMAN : ALIEN   </h1>  </div> 
 
       <div class="alien-title"> 
-         <h2>  {{ .Motcachee }}  </h2>
+         <h2>  {{ .Motcachee }}  </h2> <!--affiche le mot caché-->
       </div> 
 
      
    {{if .End}}
          {{if .Win}}
          <div class="alien-title">
-            <h2>  Vous venez de gagner !!!  </h2>
+            <h2>  Vous venez de gagner !!!  </h2> <!--affiche le fait qu'on a gagné la partie-->
             <form action="/pageAlien">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
                   var submit = document.getElementsByTagName('button')[0];
                   submit.onclick = function() {
-                     setInterval(function(){window.close()},3);
+                     setInterval(function(){window.close()},15);
                   }
                </script> 
             </form>
          </div>
          {{else}}
-           <div class="alien-title">
-            <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
+           <div class="alien-title"> <!--applique le style d'écriture Alien dans le texte ci-dessous-->
+            <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4> <!-- affiche le mot secret si on a perdu ou si on a FF-->
             <form action="/pageAlien">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
                   var submit = document.getElementsByTagName('button')[0];
                   submit.onclick = function() {
-                     setInterval(function(){window.close()},3);
+                     setInterval(function(){window.close()},15);
                   }
                </script> 
             </form>
@@ -48,6 +48,7 @@
          {{end}}
    {{else}}
       
+         <!--affiche l'alphabet pour choisir la lettre qu'on veut utiliser dans le style Alien-->
       <form action="/pageAlien">
          <button type="submit" class="btn-alien" name="letter" value="A"> A</button>
          <button type="submit" class="btn-alien" name="letter" value="B"> B</button>
@@ -79,8 +80,8 @@
    </form>
    {{end}}
 
-   <div class="alien-title"> 
-      <h4>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">   </h4>
+   <div class="alien-title"> <!--affiche le titre Alien-->
+      <h4>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">   </h4> <!--initialise la taille du fond d'écran-->
       <h4>  &ensp; {{ .Usingletters }}  &ensp; </h4>
 
       {{if .End}}

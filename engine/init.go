@@ -7,19 +7,21 @@ import (
 
 func (g *Structure) init() {
 
-	g.list_web_page = []string{"pages/index.html", "pages/pageTitanic.html", "pages/pageAlien.html", "pages/pageLOTR.html", "pages/pageFightclub.html", "pages/pageJurassic.html", "pages/pageSpiderman.html"}
+	g.list_web_page = []string{"pages/index.html", "pages/pageTitanic.html", "pages/pageAlien.html", "pages/pageLOTR.html", "pages/pageFightclub.html", "pages/pageJurassic.html", "pages/pageSpiderman.html"} //page web de chaque film//
 	g.indice_web = 0
 	g.running = true
-	g.mot_secret = ""
-	g.mot_cachee = ""
-	g.currentLetter = ""
+	g.mot_secret = "" 			//initialise le mot secret//
+	g.mot_cachee = "" 			//initialise le mot caché//
+	g.currentLetter = "" 		//initialise la lettre actuelle//
 	g.letterTest = []string{}
-	g.try = 0
+	g.try = 0 					//initialise le nombre d'essai//
 	g.reset = false
-	g.win = false
-	g.end = false
-	g.usingLetters = ""
+	g.win = false 				//initialise la condition de victoire//
+	g.end = false 				//initialise l'état du jeu//
+	g.usingLetters = "" 		//initialise une chaine de caractère//
 	g.reset_button = ""
+	
+	//initialise les différents mots de chaque films//
 	g.listWordsTitanic = []string{"PAQUEBOT", "ICEBERG", "NAVIRE", "AMOUR", "NAUFRAGE", "RICHE", "PAUVRE", "SAUVETAGE", "GLACE", "OCEAN", "COULER", "DIAMANT", "PASSAGER", "COQUE", "EPAVE", "CROISIERE", "CABINE", "DETRESSE", "LUXUEUX", "CANOT"}
 	g.listWordsAlien = []string{"MORT", "CREATURE", "VAISSEAU", "SURVIVANT", "MEURTRIER", "ORGANISME", "LANCE_FLAMME", "ANDROIDE", "ESPACE", "REINE", "OEUF", "PROIE", "HOTE", "TUER", "MONSTRE", "PLANETE", "EXPLOSION", "DESTRUCTION", "SURVIE", "CONDUITS"}
 	g.listWordsLotr = []string{"ELF", "ORC", "DRAGON", "MAGIE", "ARMURE", "GUERRIER", "SORCIER", "CREATURE", "ARGENT", "GROTTE", "ROYAUME", "DAGUE", "CHEVAL", "MAGIE", "PERIPLE", "BATAILLE", "GOBELIN", "ANNEAU", "POUVOIR", "TERRIER", "TOUR", "PRECIEUX"}
@@ -31,6 +33,8 @@ func (g *Structure) init() {
 
 	s := rand.NewSource(time.Now().Unix())
 	r := rand.New(s)
+
+	//Initialise les listes des mots de films//
 	g.mot_titanic = g.listWordsTitanic[r.Intn(len(g.listWordsTitanic))]
 	g.mot_alien = g.listWordsAlien[r.Intn(len(g.listWordsTitanic))]
 	g.mot_lotr = g.listWordsLotr[r.Intn(len(g.listWordsTitanic))]
