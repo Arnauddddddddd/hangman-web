@@ -98,7 +98,6 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 		}
 	}
 
-
 	web := DrawWeb {
 		Motsecret: g.mot_secret,
 		Motcachee: g.mot_cachee,
