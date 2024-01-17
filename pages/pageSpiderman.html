@@ -7,7 +7,7 @@
    </head>
 
    <body>
-    <body background="../pictures/spidermanBG.jpg"> </body>
+    <body background="../pictures/spidermanBG.jpg"> </body> <!--initialise le fond d'ecran du film Spiderman-->
       <div class="spiderman">  
          <h1>   HANGMAN &ensp;&ensp; SPIDERMAN  </h1>
 
@@ -20,7 +20,7 @@
       {{if .End}}
          {{if .Win}}
          <div class="spiderman">
-            <h3>  Vous venez de gagner !!!  </h3>
+            <h3>  Vous venez de gagner !!!  </h3> <!--affiche le fait qu'on a gagné la partie-->
             <form action="/pageSpiderman">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
@@ -30,8 +30,8 @@
             </form>
          </div>
          {{else}}
-            <div class="spiderman">
-            <h3>  Le mot etait tout simplement : {{ .Motsecret }} </h3>
+            <div class="spiderman"> <!--applique le style d'écriture LOTR dans le texte ci-dessous-->
+            <h3>  Le mot etait tout simplement : {{ .Motsecret }} </h3> <!-- affiche le mot secret si on a perdu ou si on a FF-->
             <form action="/pageSpiderman">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
@@ -49,7 +49,7 @@
       <form action="/pageSpiderman">
          
          
-         <div class="button-borders">
+         <div class="button-borders"> <!--affiche l'alphabet pour choisir la lettre qu'on veut utiliser dans le style Spiderman-->
          <button type="submit" class="jurassic-btn" name="letter" value="A"> A </button>
          <button type="submit" class="jurassic-btn" name="letter" value="B"> B </button>
          <button type="submit" class="jurassic-btn" name="letter" value="C"> C</button>
@@ -81,8 +81,8 @@
    {{end}}
    
 
-   <div class="spiderman">
-      <h3>  <img src="../hangman/hang{{ .Try }}.PNG" height="30%" width="15%">  </h3>
+   <div class="spiderman"> <!--affiche le titre Spiderman--> 
+      <h3>  <img src="../hangman/hang{{ .Try }}.PNG" height="30%" width="15%">  </h3> <!--initialise la taille du fond d'écran-->
       <h3> &ensp;  {{ .Usingletters }} &ensp; </h3>
    </div> 
 

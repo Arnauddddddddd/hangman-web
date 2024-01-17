@@ -7,7 +7,7 @@
    </head>
 
    <body>
-      <body background="../pictures/titanicccccc.jpg"> </body>
+      <body background="../pictures/titanicccccc.jpg"> </body> <!--initialise le fond d'ecran du film Titanic-->
 
 
       <div class="titanic-title"> <h1>   HANGMAN : TITANIC   </h1> 
@@ -18,7 +18,7 @@
       {{if .End}}
          {{if .Win}}
          <div class="titanic-title">
-            <h3>  Vous venez de gagner !!!  </h3>
+            <h3>  Vous venez de gagner !!!  </h3> <!--affiche le fait qu'on a gagné la partie-->
             <form action="/pageTitanic">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
@@ -28,8 +28,8 @@
             </form>
          </div>
          {{else}}
-         <div class="titanic-title">
-            <h3>  Le mot etait tout simplement : {{ .Motsecret }} </h3>
+         <div class="titanic-title"> <!--applique le style d'écriture LOTR dans le texte ci-dessous-->
+            <h3>  Le mot etait tout simplement : {{ .Motsecret }} </h3> <!-- affiche le mot secret si on a perdu ou si on a FF-->
             <form action="/pageTitanic">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
@@ -44,7 +44,7 @@
 
 
 
-      <form action="/pageTitanic">
+      <form action="/pageTitanic"> <!--affiche l'alphabet pour choisir la lettre qu'on veut utiliser dans le style Spiderman-->
          
          <button class="titanic-btn" type="submit" name="letter" value="A"> <span class="liquid"></span>  
          <span class="btn-txt">A</span> </button>
@@ -103,8 +103,8 @@
 </div>
    {{end}}
 
-   <div class="titanic-title">
-      <h3>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h3>
+   <div class="titanic-title"> <!--affiche le titre Spiderman-->
+      <h3>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h3> <!--initialise la taille du fond d'écran-->
       <h3>  &ensp; {{ .Usingletters }} &ensp; </h3>
    </div> 
 

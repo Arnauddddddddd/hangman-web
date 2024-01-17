@@ -7,7 +7,7 @@
    </head>
 
    <body>
-      <body background="../pictures/bglotr2.jpg"> </body>
+      <body background="../pictures/bglotr2.jpg"> </body> <!--initialise le fond d'ecran du film LOTR-->
       <img src="../pictures/lotrtext.png" height="10%" width="60%">
 
       <!-- <input type = "button" name = "test" VALUE = "atchatchatcha" onclick="window.location.href = 'page2.html'"> -->
@@ -20,7 +20,7 @@
    {{if .End}}
          {{if .Win}}
          <div class="lotr">
-            <h4>  Vous venez de gagner !!!  </h4>
+            <h4>  Vous venez de gagner !!!  </h4> <!--affiche le fait qu'on a gagné la partie-->
             <form action="/pageLOTR">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
@@ -28,8 +28,8 @@
                   submit.onclick = function() {setInterval(function(){window.close()},15);}
                </script> 
          {{else}}
-         <div class="lotr">  
-            <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4>
+         <div class="lotr"> <!--applique le style d'écriture LOTR dans le texte ci-dessous-->
+            <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4> <!-- affiche le mot secret si on a perdu ou si on a FF-->
             <form action="/pageLOTR">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
@@ -41,7 +41,7 @@
          {{end}}
    {{else}}
       <form action="/pageLOTR">
-         <div class="lotr">
+         <div class="lotr"> <!--affiche l'alphabet pour choisir la lettre qu'on veut utiliser dans le style LOTR-->
          <button type="submit" class="lotr-btn" name="letter" value="A"> A</button>
          <button type="submit" class="lotr-btn" name="letter" value="B"> B</button>
          <button type="submit" class="lotr-btn" name="letter" value="C"> C</button>
@@ -71,8 +71,8 @@
          </div> 
    {{end}}
 
-   <div class="lotr">
-      <h3>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h3>
+   <div class="lotr"> <!--affiche le titre LOTR--> 
+      <h3>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h3> <!--initialise la taille du fond d'écran-->
       <h3>  &ensp; {{ .Usingletters }} &ensp; </h3>
    </div> 
 
