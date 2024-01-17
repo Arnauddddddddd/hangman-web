@@ -18,25 +18,26 @@
    {{if .End}}
          {{if .Win}}
          <div class="fight-club-title">
-            <h2>  Vous venez de gagner !!!  </h2> <!--affiche le fait qu'on a gagné la partie-->
+            <h2>  Vous venez de gagner !!!  </h2>
             <form action="/pageFightclub">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
                   var submit = document.getElementsByTagName('button')[0];
                   submit.onclick = function() {
-                     setInterval(function(){window.close()},15);
+                     setInterval(function(){window.close()},3);
                   }
                </script> 
             </form>
          {{else}}
-         <div class="fight-club-title"> <!--applique le style d'écriture FightClub dans le texte ci-dessous-->
+         <div class="fight-club-title"> 
+            <!--applique le style d'écriture FightClub dans le texte ci-dessous-->
             <h5>  Le mot etait tout simplement : {{ .Motsecret }} </h5> <!-- affiche le mot secret si on a perdu ou si on a FF-->
             <form action="/pageFightclub">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
                   var submit = document.getElementsByTagName('button')[0];
                   submit.onclick = function() {
-                     setInterval(function(){window.close()},15);
+                     setInterval(function(){window.close()},3);
                   }
                </script> 
             </form>
@@ -95,8 +96,10 @@
    {{end}}
 
    <div class="fight-club-title"> <!--affiche le titre Alien-->  
-      <h6>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h6> <!--initialise la taille du fond d'écran-->
+      <h6>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h6>
+       <!-- affiche le pendu --> 
       <h6>  &ensp; {{ .Usingletters }}  &ensp; </h6>
+      <!-- affiche les lettres utilisées --> 
    </div>
 
    {{if .End}}
