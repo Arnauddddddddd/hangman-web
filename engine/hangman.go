@@ -39,7 +39,11 @@ func (g *Structure) defWord(movie int) {
 	// affiche des "_" en fonction du nombre de lettres du mot secret
 	if len(g.mot_cachee) < len(g.mot_secret)*2 {
 		for i := 0; i < len(g.mot_secret); i++ {
-			g.mot_cachee += "_ "
+			if byte(g.mot_secret[i]) == '-' {
+				g.mot_cachee += "- "
+			} else {
+				g.mot_cachee += "_ "
+			}
 		}
 	}
 }

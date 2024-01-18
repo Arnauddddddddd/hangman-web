@@ -18,7 +18,7 @@ type DrawWeb struct {
 
 
 func(g *Structure) web() {
-	// chargement de tous les répertoirs présents dans "Hangman-Web"
+	// chargement de tous les répertoires présents dans "Hangman-Web"
 	http.Handle("/steady/", http.StripPrefix("/steady/", http.FileServer(http.Dir("steady"))))
 	http.Handle("/pictures/", http.StripPrefix("/pictures/", http.FileServer(http.Dir("pictures"))))
 	http.Handle("/hangman/", http.StripPrefix("/hangman/", http.FileServer(http.Dir("hangman"))))
