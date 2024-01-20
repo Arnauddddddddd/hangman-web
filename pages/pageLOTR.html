@@ -20,7 +20,7 @@
    {{if .End}}
          {{if .Win}}
          <div class="lotr">
-            <h4>  Vous venez de gagner !!!  </h4> <!--affiche le fait qu'on a gagné la partie-->
+            <h4>  Vous venez de gagner !!!  </h4>
             <form action="/pageLOTR">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
                <script>
@@ -71,8 +71,8 @@
          </div> 
    {{end}}
 
-   <div class="lotr"> <!--affiche le titre LOTR--> 
-      <h3>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h3> <!--initialise la taille du fond d'écran-->
+   <div class="lotr"> 
+      <h3>  <img src="../hangman/hang{{ .Try }}.PNG" height="20%" width="10%">  </h3> 
       <h3>  &ensp; {{ .Usingletters }} &ensp; </h3>
    </div> 
 
