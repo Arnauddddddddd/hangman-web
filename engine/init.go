@@ -10,16 +10,16 @@ func (g *Structure) init() {
 
 	 
 	// initialisation des variables en lien avec le web
-	g.list_web_page = []string{"pages/index.html", "pages/pageTitanic.html", "pages/pageAlien.html", "pages/pageLOTR.html", "pages/pageFightclub.html", "pages/pageJurassic.html", "pages/pageSpiderman.html"} //page web de chaque film//
-	g.indice_web = 0
+	g.pagesWeblist = []string{"pages/index.html", "pages/pageTitanic.html", "pages/pageAlien.html", "pages/pageLOTR.html", "pages/pageFightclub.html", "pages/pageJurassic.html", "pages/pageSpiderman.html"} //page web de chaque film//
+	g.iteratorWebPage = 0
 	g.running = true
 
 	//inititialise les variables permettant la résolution du hangman
-	g.mot_secret = "" 			
-	g.mot_cachee = "" 			
+	g.secretWord = "" 			
+	g.hiddenWord = "" 			
 	g.currentLetter = "" 		
 	g.usingLetters = "" 		
-	g.letterTest = []string{}
+	g.letterTested = []string{}
 
 	//initialise les variables servant de changer l'état du jeu
 	g.try = 0 					
@@ -39,10 +39,10 @@ func (g *Structure) init() {
 	r := rand.New(s)
 
 	//Initialise aléatoirement chaque mot de film en un mot aléatoire en fonction du film
-	g.mot_titanic = g.listWordsTitanic[r.Intn(20)]
-	g.mot_alien = g.listWordsAlien[r.Intn(20)]
-	g.mot_lotr = g.listWordsLotr[r.Intn(20)]
-	g.mot_fc = g.listWordsFc[r.Intn(20)]
-	g.mot_jurassic = g.listWordsJurassic[r.Intn(20)]
-	g.mot_spiderman = g.listWordsSpiderman[r.Intn(20)]
+	g.wordTitanic = g.listWordsTitanic[r.Intn(20)]
+	g.wordAlien = g.listWordsAlien[r.Intn(20)]
+	g.wordLOTR = g.listWordsLotr[r.Intn(20)]
+	g.wordFightclub = g.listWordsFc[r.Intn(20)]
+	g.wordJurassic = g.listWordsJurassic[r.Intn(20)]
+	g.wordSpiderman = g.listWordsSpiderman[r.Intn(20)]
 }

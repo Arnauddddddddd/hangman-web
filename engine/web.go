@@ -42,7 +42,7 @@ func(g *Structure) web() {
 // fonctions pour chaque page
 
 func(g *Structure) index(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles(g.list_web_page[0]))
+	tmpl := template.Must(template.ParseFiles(g.pagesWeblist[0]))
 	tmpl.Execute(w, nil)
 }
 
@@ -80,7 +80,7 @@ func(g *Structure) pageSpiderman(w http.ResponseWriter, r *http.Request) {
 
 func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice int) {
 	r.ParseForm()  // permet de récupérer les caractères envoyés par les pages html
-	tmpl := template.Must(template.ParseFiles(g.list_web_page[indice]))
+	tmpl := template.Must(template.ParseFiles(g.pagesWeblist[indice]))
 	letter := r.Form.Get("letter")         // initialisation de la lettre actuelle
 	g.currentLetter = letter	   
 
@@ -89,7 +89,7 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 			g.end = true
 		} else if g.verif(rune(g.currentLetter[0])) { // si la lettre n'a pas déja été utilisée : on l'ajoute aux lettres utilisées et on vérifie si elle est dans le mot
 			g.usingLetters += "  " + string(g.currentLetter[0])
-			g.letterTest = append(g.letterTest, string(g.currentLetter[0]))
+			g.letterTested = append(g.letterTested, string(g.currentLetter[0]))
 			g.inWord(rune(g.currentLetter[0]))
 		}
 	}
@@ -105,8 +105,8 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 	}
 
 	web := DrawWeb {
-		Motsecret: g.mot_secret,
-		Motcachee: g.mot_cachee,
+		Motsecret: g.secretWord,
+		Motcachee: g.hiddenWord,
 		Usingletters: g.usingLetters,
 		Win: g.win,
 		Try: g.try,

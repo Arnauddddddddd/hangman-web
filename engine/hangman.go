@@ -2,7 +2,7 @@ package engine
 
 func (g *Structure) verif(letter rune) bool {
 	// renvoie vrai si la lettre passée en paramètre a déja été testé, sinon faux
-	for _, i := range(g.letterTest) {
+	for _, i := range(g.letterTested) {
 		if rune(i[0]) == letter {
 			return false
 		}
@@ -13,10 +13,10 @@ func (g *Structure) verif(letter rune) bool {
 
 func  (g *Structure) inWord(letter rune) {
 	// vérifie si la lettre passée en paramètre se trouve dans le mot secret
-	list := []rune(g.mot_cachee)
+	list := []rune(g.hiddenWord)
 	letterInWord := false 		  // initialisation d'un boolean indiquant si la lettre est dans le mot secret
-	for i := 0; i < len(g.mot_secret); i++ {
-		if rune(g.mot_secret[i]) == letter {
+	for i := 0; i < len(g.secretWord); i++ {
+		if rune(g.secretWord[i]) == letter {
 			list[i*2] = letter
 			letterInWord = true   // la lettre tapée est dans le mot secret
 		}
@@ -25,24 +25,24 @@ func  (g *Structure) inWord(letter rune) {
 		g.try += 1
 		return
 	}					// si la lettre est dans le mot, on actualise l'affichage du mot sur la page web
-	g.mot_cachee = ""
+	g.hiddenWord = ""
 	for i := 0; i < len(list); i++ {
-		g.mot_cachee += string(list[i])
+		g.hiddenWord += string(list[i])
 	}
 }
 
 
 func (g *Structure) defWord(movie int) {
 	// définit quelle doit être le mot du film en fonction de l'entier reçu en paramètre
-	listMovies := []string{g.mot_titanic, g.mot_alien ,g.mot_lotr, g.mot_fc,  g.mot_jurassic, g.mot_spiderman} // initialisation d'une liste qui contient tous les mots de chaque film
-	g.mot_secret = listMovies[movie-1] // initialise le mot secret en fonction de l'entier reçu en paramètre
+	listMovies := []string{g.wordTitanic, g.wordAlien ,g.wordLOTR, g.wordFightclub,  g.wordJurassic, g.wordSpiderman} // initialisation d'une liste qui contient tous les mots de chaque film
+	g.secretWord = listMovies[movie-1] // initialise le mot secret en fonction de l'entier reçu en paramètre
 	// affiche des "_" en fonction du nombre de lettres du mot secret
-	if len(g.mot_cachee) < len(g.mot_secret)*2 {
-		for i := 0; i < len(g.mot_secret); i++ {
-			if byte(g.mot_secret[i]) == '-' {
-				g.mot_cachee += "- "
+	if len(g.hiddenWord) < len(g.secretWord)*2 {
+		for i := 0; i < len(g.secretWord); i++ {
+			if byte(g.secretWord[i]) == '-' {
+				g.hiddenWord += "- "
 			} else {
-				g.mot_cachee += "_ "
+				g.hiddenWord += "_ "
 			}
 		}
 	}
@@ -51,9 +51,9 @@ func (g *Structure) defWord(movie int) {
 
 func (g *Structure) verifWin() {
 	// vérifie si le joueur a gagné la partie
-	list := []rune(g.mot_cachee)
-	list2 := []rune(g.mot_secret)
-	for i := 0; i < len(g.mot_secret); i++ { // si le mot qui se complète n'est pas égale au mot secret, la fonction s'arrête
+	list := []rune(g.hiddenWord)
+	list2 := []rune(g.secretWord)
+	for i := 0; i < len(g.secretWord); i++ { // si le mot qui se complète n'est pas égale au mot secret, la fonction s'arrête
 		if list[i*2] != list2[i] {
 			return
 		}

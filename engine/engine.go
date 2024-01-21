@@ -3,15 +3,15 @@ package engine
 type Structure struct {
 	//variables en lien avec le web
 	running            bool
-	list_web_page      []string
-	indice_web         int
+	pagesWeblist      []string
+	iteratorWebPage         int
 
 	//variables permettant la résolution du hangman
-	mot_secret         string
-	mot_cachee         string
+	secretWord         string
+	hiddenWord         string
 	currentLetter      string
 	usingLetters       string
-	letterTest         []string   
+	letterTested      []string   
 
     //liste des mots de chaque film
 	listWordsTitanic   []string
@@ -22,12 +22,12 @@ type Structure struct {
 	listWordsSpiderman []string
 
 	//mot de chaque film
-	mot_titanic        string
-	mot_alien          string
-	mot_lotr           string
-	mot_fc             string
-	mot_jurassic       string
-	mot_spiderman      string
+	wordTitanic        string
+	wordAlien          string
+	wordLOTR           string
+	wordFightclub      string
+	wordJurassic       string
+	wordSpiderman      string
 
 	//variables servant de changer l'état du jeu
 	win                bool
