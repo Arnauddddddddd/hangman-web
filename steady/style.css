@@ -574,3 +574,31 @@ button {
     transform: rotate(360deg);
   }
 }
+
+
+
+
+.glowing1:hover {
+  color: white;
+  box-shadow: 1px 1px 5px 5px rgb(73, 5, 136);
+}
+.glowing2:hover {
+  color: white;
+  box-shadow: 1px 1px 5px 5px rgb(16, 138, 238);
+}
+.glowing3:hover {
+  color: white;
+  box-shadow: 1px 1px 5px 5px rgb(248, 144, 24);
+}
+.glowing4:hover {
+  color: white;
+  box-shadow: 1px 1px 5px 5px rgb(193, 66, 252);
+}
+.glowing5:hover {
+  color: white;
+  box-shadow: 1px 1px 5px 5px rgb(17, 146, 0);
+}
+.glowing6:hover {
+  color: white;
+  box-shadow: 1px 1px 5px 5px rgb(255, 0, 0);
+}

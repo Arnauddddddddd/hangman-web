@@ -16,15 +16,17 @@
       </div> 
 
       {{if .End}}
+         {{if .Close}}
+         <script>
+         window.close();
+         </script>
+         {{end}}
+
          {{if .Win}}
          <div class="titanic-title">
             <h3>  Vous venez de gagner !!!  </h3> 
             <form action="/pageTitanic">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
-               <script>
-                  var submit = document.getElementsByTagName('button')[0];
-                  submit.onclick = function() {setInterval(function(){window.close()},3);}
-               </script> 
             </form>
          </div>
          {{else}}
@@ -32,10 +34,6 @@
             <h3>  Le mot etait tout simplement : {{ .Motsecret }} </h3> <!-- affiche le mot secret si on a perdu ou si on a FF-->
             <form action="/pageTitanic">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
-               <script>
-                  var submit = document.getElementsByTagName('button')[0];
-                  submit.onclick = function() {setInterval(function(){window.close()},3);}
-               </script> 
             </form>
          </div>
          {{end}}

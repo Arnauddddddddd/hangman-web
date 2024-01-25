@@ -3,15 +3,16 @@ package engine
 type Structure struct {
 	//variables en lien avec le web
 	running            bool
-	pagesWeblist      []string
-	iteratorWebPage         int
+	pagesWeblist       []string
+	iteratorWebPage    int
+	closeWindow		   bool
 
 	//variables permettant la résolution du hangman
 	secretWord         string
 	hiddenWord         string
 	currentLetter      string
 	usingLetters       string
-	letterTested      []string   
+	letterTested       []string   
 
     //liste des mots de chaque film
 	listWordsTitanic   []string
@@ -38,7 +39,7 @@ type Structure struct {
 func (g *Structure) Run() {
 	//lance le programme
 	g.init()		
-	for g.running {	 //lance en continue la fonction web
+	if g.running {	 //lance en continue la fonction web
 		g.web()
 	}
 }

@@ -11,6 +11,7 @@ type DrawWeb struct {
 	Motsecret string
 	Motcachee string
 	Usingletters string
+	Close bool
 	Win bool
 	Try int
 	End bool
@@ -79,6 +80,7 @@ func(g *Structure) pageSpiderman(w http.ResponseWriter, r *http.Request) {
 
 
 func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice int) {
+
 	r.ParseForm()  // permet de récupérer les caractères envoyés par les pages html
 	tmpl := template.Must(template.ParseFiles(g.pagesWeblist[indice]))
 	letter := r.Form.Get("letter")         // initialisation de la lettre actuelle
@@ -99,8 +101,7 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 	}
 	if g.end {    // si la partie est terminée et que l'utilisateur appuie sur le bouton "Menu" : On réinitialise tout et on relance la première page
 		if g.currentLetter == "back" {
-			g.init()
-			g.index(w, r)
+			g.closeWindow = true
 		}
 	}
 
@@ -108,9 +109,15 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 		Motsecret: g.secretWord,
 		Motcachee: g.hiddenWord,
 		Usingletters: g.usingLetters,
+		Close: g.closeWindow,
 		Win: g.win,
 		Try: g.try,
 		End: g.end,
 	}
 	tmpl.Execute(w, web)  // permet de récupérer les valeurs de la structure DrawWeb sur le html
+
+	if g.closeWindow {
+		g.init()
+		return
+	}
 }

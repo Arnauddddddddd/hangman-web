@@ -17,17 +17,19 @@
       </div>
 
    {{if .End}}
+
+         {{if .Close}}
+         <script>
+         window.close();
+         </script>
+         {{end}}
+
+
          {{if .Win}}
          <div class="fight-club-title">
             <h2>  Vous venez de gagner !!!  </h2>
             <form action="/pageFightclub">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
-               <script>
-                  var submit = document.getElementsByTagName('button')[0];
-                  submit.onclick = function() {
-                     setInterval(function(){window.close()},3);
-                  }
-               </script> 
             </form>
          {{else}}
          <div class="fight-club-title"> 
@@ -35,12 +37,6 @@
             <h5>  Le mot etait tout simplement : {{ .Motsecret }} </h5> <!-- affiche le mot secret si on a perdu ou si on a FF-->
             <form action="/pageFightclub">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
-               <script>
-                  var submit = document.getElementsByTagName('button')[0];
-                  submit.onclick = function() {
-                     setInterval(function(){window.close()},3);
-                  }
-               </script> 
             </form>
          </div>
          {{end}}

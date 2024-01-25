@@ -15,20 +15,23 @@
          <h1>   HANGMAN  JURASSIC PARK  </h1>
       </div>
 
+
       <div class="jurassic"> 
          <h3>  {{ .Motcachee }}  </h3>
-      </div> 
+      </div>
 
       {{if .End}}
-         {{if .Win}}
+         {{if .Close}}
+         <script>
+         window.close();
+         </script>
+         {{end}}
+
+         {{if .Win}}         
          <div class="jurassic">
             <h3>  Vous venez de gagner !!!  </h3>
             <form action="/pageJurassic">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
-               <script>
-                  var submit = document.getElementsByTagName('button')[0];
-                  submit.onclick = function() {setInterval(function(){window.close()},3);}
-               </script> 
             </form>
          </div>
          {{else}}
@@ -36,12 +39,6 @@
             <h4>  Le mot etait tout simplement : {{ .Motsecret }} </h4> <!-- affiche le mot secret si on a perdu ou si on a FF-->
             <form action="/pageJurassic">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
-               <script>
-                  var submit = document.getElementsByTagName('button')[0];
-                  submit.onclick = function() {
-                     setInterval(function(){window.close()},3);
-                  }
-               </script> 
             </form>
          </div>
          {{end}}
@@ -59,6 +56,7 @@
          <button type="submit" class="jurassic-btn" name="letter" value="H"> H</button>
          <button type="submit" class="jurassic-btn" name="letter" value="I"> I</button>
          <button type="submit" class="jurassic-btn" name="letter" value="J"> J</button>
+         <br>
          <button type="submit" class="jurassic-btn" name="letter" value="K"> K</button>
          <button type="submit" class="jurassic-btn" name="letter" value="L"> L</button>
          <button type="submit" class="jurassic-btn" name="letter" value="M"> M</button>
@@ -84,7 +82,7 @@
    </div> 
 
    {{if .End}}
-      {{else}}
+   {{else}}
    <form action="/pageJurassic">
       <button type="submit" class="menu-btn" name="letter" value="giveup"> FF </button>
    </form>

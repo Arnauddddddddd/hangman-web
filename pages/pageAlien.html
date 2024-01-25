@@ -19,17 +19,17 @@
 
      
    {{if .End}}
+         {{if .Close}}
+         <script>
+         window.close();
+         </script>
+         {{end}}
+
          {{if .Win}}
          <div class="alien-title">
             <h4>  Vous venez de gagner !!!  </h4> 
             <form action="/pageAlien">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
-               <script>
-                  var submit = document.getElementsByTagName('button')[0];
-                  submit.onclick = function() {
-                     setInterval(function(){window.close()},3);
-                  }
-               </script> 
             </form>
          </div>
          {{else}}
@@ -39,12 +39,6 @@
             <!-- affiche le mot secret si on a perdu ou si on a FF-->
             <form action="/pageAlien">
                <button type="submit" class="menu-btn" name="letter" value="back"> Menu </button>
-               <script>
-                  var submit = document.getElementsByTagName('button')[0];
-                  submit.onclick = function() {
-                     setInterval(function(){window.close()},3);
-                  }
-               </script> 
             </form>
          </div>
          {{end}}
