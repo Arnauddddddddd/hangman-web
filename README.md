@@ -1,5 +1,16 @@
 Bonjour, bienvenue sur le Hangman Web de Arnaud et Victor de la B1 Informatique d'Ynov Campus.
 
+
+Il s'agit d'un Hangman Web sur le thème du 7ème art, c'est à dire, le cinéma. Vous aurez le choix entre 6 films cultes :
+- Alien
+- Titanic
+- Le Seigneur des Anneaux : Le retour du Roi
+- Fight Club
+- Jurassic Park
+- Spiderman
+
+Tous les films ont une page, une musique et une liste de mot différentes.
+
 Pour lancer la page, il suffit de se mettre dans le répertoire de la page et de faire un  "/go run ."
 
 Il faudra rentrer cet URL sur un navigateur web : http://localhost:8080/
