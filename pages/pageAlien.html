@@ -6,18 +6,14 @@
          <title> HANGMAN </title>
          <script type="text/javascript" src="../javascript/fullajax.js"></script>
    </head>
-
    <body>
       <!--initialise le fond d'écran du film Alien-->
       <body background="../pictures/alien3.png"> </body>
       <h1>   <title>  HANGMAN </title>   </h1>
       <div class="alien-title"> <h1>   HANGMAN : ALIEN   </h1>  </div> 
-
       <div class="alien-title"> 
          <h2>  {{ .Motcachee }}  </h2>  <!--affiche le mot caché-->
       </div> 
-
-     
    {{if .End}}
          {{if .Close}}
          <script>
@@ -89,7 +85,5 @@
       </form>
       {{end}}
    </div> 
-   
-
    </body>
 </html>

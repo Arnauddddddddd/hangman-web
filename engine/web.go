@@ -19,7 +19,7 @@ type DrawWeb struct {
 
 
 func(g *Structure) web() {
-	// chargement de tous les répertoires présents dans "Hangman-Web"
+	// chargement de tous les répertoirs présents dans "Hangman-Web"
 	http.Handle("/steady/", http.StripPrefix("/steady/", http.FileServer(http.Dir("steady"))))
 	http.Handle("/pictures/", http.StripPrefix("/pictures/", http.FileServer(http.Dir("pictures"))))
 	http.Handle("/hangman/", http.StripPrefix("/hangman/", http.FileServer(http.Dir("hangman"))))
@@ -86,7 +86,7 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 	letter := r.Form.Get("letter")         // initialisation de la lettre actuelle
 	g.currentLetter = letter	   
 
-	if len(g.currentLetter) > 0 {          // si l'information reçue n'est pas vide(donc est une lettre) 
+	if len(g.currentLetter) > 0 {          // si l'information reçue n'est pas vide( donc est une lettre) 
 		if g.currentLetter == "giveup" {   // si l'information reçue est égale à "giveup", la partie est terminée car le joueur a abandonné
 			g.end = true
 		} else if g.verif(rune(g.currentLetter[0])) { // si la lettre n'a pas déja été utilisée : on l'ajoute aux lettres utilisées et on vérifie si elle est dans le mot
@@ -104,7 +104,6 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 			g.closeWindow = true
 		}
 	}
-
 	web := DrawWeb {
 		Motsecret: g.secretWord,
 		Motcachee: g.hiddenWord,
@@ -114,7 +113,7 @@ func (g *Structure) pageHangman(w http.ResponseWriter, r *http.Request, indice i
 		Try: g.try,
 		End: g.end,
 	}
-	tmpl.Execute(w, web)  // permet de récupérer les valeurs de la structure DrawWeb sur le html
+	tmpl.Execute(w, web)  // permet d'envoyer les valeurs de la structure DrawWeb sur le html
 
 	if g.closeWindow {
 		g.init()
