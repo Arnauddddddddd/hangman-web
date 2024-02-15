@@ -18,18 +18,20 @@ Si vous avez fini avec le hangman d'un film et que la page se ferme mais que la 
 
 
 La page web a été créée dans le but d'être utilisée sur le moteur Chromium, tout de fois, être sur un autre navigateur ne pose pas de problème.
-La seule chose qui changera d'un navigateur à un autre, c'est le style de la page.
-
+Cependant la différence de style entre Chromium et les autres navigateurs est très flaggrante c'est pourquoi il est très préférable d'être sur Chromium pour cette page.
   
 
 CONFIGURATION CONSEILLEE POUR CHAQUE NAVIGATEUR:
 
     recommandé à 100%:
-      Chromium :  Zoom 90%
-
     
-    Firefox : Zoom 90%
-    Chrome : Zoom 90%
+      -Chromium :  Zoom 90%
+
+
+    recommandé à 70%:
+
+      -Firefox : Zoom 90%
+      -Chrome : Zoom 90%
 
     le reste : jsp
 
